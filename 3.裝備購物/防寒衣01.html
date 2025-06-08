@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品購物頁</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: normal;
+      }
+
+      body {
+        position: relative;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* min-height: 150vh; */
+        width: 100%;
+        background-color: wheat;
+        flex-direction: column;
+        /* padding: 20px; */
+        height: 100%;
+      }
+      .container {
+        /* border: 2px solid blue; */
+        min-height: 120vh;
+        width: 70%;
+        /* 讓容器至少填滿視窗高度 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 垂直置中 */
+        align-items: center; /* 水平置中 */
+        /* border: 2px solid red; */
+        position: relative;
+      }
+      body header {
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      body header section.logo {
+        flex: 2 1 400px;
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+      }
+      body header section.logo h1 {
+        font-size: 2.5rem;
+        color: white;
+      }
+      body header section.logo img {
+        width: 6vw;
+        height: 6vw;
+        filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+      }
+      body header nav {
+        flex: 5 1 500px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #596987;
+        height: 100px;
+        /* border: 2px solid red; */
+      }
+      body header nav ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+      }
+      body header nav ul li {
+        /* border: 2px solid blue; */
+        position: relative;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        height: 102px;
+      }
+      body header nav ul li.dropdown-menu1:hover .dropdown-menu,
+      body header nav ul li.dropdown-menu2:hover .dropdown-menu,
+      body header nav ul li.dropdown-menu3:hover .dropdown-menu,
+      body header nav ul li.dropdown-menu4:hover .dropdown-menu {
+        display: block;
+        /* border: 3px solid green; */
+        top: 102px;
+      }
+      body header nav ul li a {
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.35rem;
+        transition: all 0.2s ease;
+        padding-bottom: 0.3rem;
+      }
+      body header nav ul li a:hover {
+        color: rgba(255, 57, 120, 0.5);
+        border-bottom: 3px solid rgba(255, 57, 120, 0.5);
+      }
+      body header nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 110px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 150px;
+        border-radius: 5px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      body header nav ul li ul li a {
+        font-size: 20px;
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+      }
+      body header nav ul li ul li a:hover {
+        background-color: rgba(0, 0, 0, 0);
+      } /*# sourceMappingURL=style展示.css.map */
+
+      div.product-container {
+        display: flex;
+        position: relative;
+        max-width: 900px;
+        height: 700px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        gap: 20px;
+        align-items: flex-start;
+        top: 30px;
+        flex-wrap: wrap;
+        /* border: 1px solid blue; */
+      }
+
+      .product-gallery {
+        /* position: relative;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px; */
+
+        display: flex;
+        gap: 30px; /* 讓大圖和小圖之間有空間 */
+        align-items: flex-start;
+      }
+
+      .small-images {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .small-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid transparent;
+      }
+
+      .small-img:hover {
+        transform: scale(1.1);
+        border: 2px solid #007bff;
+      }
+
+      .product-img {
+        width: 300px;
+        border-radius: 10px;
+      }
+
+      .product-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      select,
+      input,
+      button {
+        margin: 5px 0;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .cart-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        /* padding: 10px 20px; */
+        font-size: 26px;
+        /* background-color: #007bff; */
+        /* color: white; */
+        border: none;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .cart-button:hover {
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      /* 購物車側邊欄 */
+      .cart {
+        position: fixed;
+        top: 105px;
+        right: -100%; /* 初始狀態：隱藏 */
+        width: 400px;
+        height: 400px;
+        background: white;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out; /* 滑動動畫 */
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+        border-radius: 5px;
+        padding: 20px;
+        z-index: 1;
+      }
+
+      /* 當 .cart.open 被添加時，購物車滑出 */
+      .cart.open {
+        right: 5px;
+      }
+
+      /* 購物車標題 */
+      .cart-header {
+        /* border: 2px solid green; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        /* position: relative */
+      }
+
+      /* 關閉按鈕 */
+      .close-btn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        /* top: 10px; 距離頂部 10px */
+        /* right: 10px; 距離右側 10px */
+        display: flex;
+        justify-content: flex-end; /* 使按鈕在右側 */
+        align-items: flex-start;
+        top: -20px;
+      }
+
+      .close-btn:hover {
+        color: rgb(139, 0, 12);
+      }
+
+      /* 購物車內容 */
+      .cart-content {
+        flex: 1;
+        overflow-y: auto; /* 內容可滾動 */
+        margin-top: 10px;
+      }
+
+      /* 結帳按鈕 */
+      .cart-footer {
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        text-align: center;
+      }
+
+      /* .checkout-btn {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid red;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+} */
+
+      .cart-container {
+        /* border: 2px solid blue; */
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        /* position: fixed */
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      .btn1 {
+        /* background-color: #ff4d4d; */
+        color: rgb(124, 187, 226);
+        background: none;
+        border: none;
+        /* cursor: pointer; */
+        /* padding: 8px; */
+      }
+      .btn1:hover {
+        /* background-color: #cc0000; */
+        color: rgb(19, 96, 144);
+      }
+      .quantity-btn {
+        cursor: pointer;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+        margin: 2px;
+      }
+      .Checkout {
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: row; /* 讓元素縱向排列 */
+        align-items: center; /* 水平置中 */
+        justify-content: center; /* 垂直置中 */
+        gap: 50px; /* 控制項目間距 */
+        padding: 20px;
+        /* background-color: #f8f8f8; */
+        /* border-radius: 10px; */
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+        /* max-width: 300px;
+  margin: 0 auto; 確保整個區塊在頁面上置中 */
+      }
+      #total-price {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .Button-Checkout {
+        padding: 10px 10px;
+        /* background-color: #28a745;
+  color: white;*/
+        /* border: none; */
+        border-radius: 5px;
+        /* cursor: pointer; */
+        width: 150px;
+      }
+      .Button-Checkout:active {
+        transform: scale(0.98); /* 按下時縮小，不用改變顏色 */
+      }
+
+      body footer {
+        /* border: 2px solid red; */
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        background-color: #153162;
+        height: 200px;
+        /* bottom: 0; */
+        /* left: 0; */
+        /* position: fixed; */
+        width: 100%; /* 寬度 100% */
+      }
+      body footer section.logo img {
+        width: 5vw;
+        filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+      }
+      body footer section.logo h3 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      body footer section.links {
+        margin-top: 2rem;
+      }
+      body footer section.links a img {
+        width: 5vh;
+        margin: 0rem 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <section class="logo">
+            <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
+            <a
+              href="../1.潛水網站/潛水網站最新.html"
+              style="text-decoration: none"
+              ><h1>自由潛水</h1></a
+            >
+          </section>
+          <li class="dropdown-menu1">
+            <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
+            <ul class="dropdown-menu">
+              <li><a href="../3.裝備購物/購物首頁.html">自潛蛙鞋</a></li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_2"
+                  >面鏡/呼吸管</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_3"
+                  >防寒衣</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-menu2">
+            <a href="#"
+              ><i class="fa-solid fa-right-to-bracket"></i> 課程報名</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="#">自潛課程</a></li>
+              <li><a href="#">水肺課程</a></li>
+              <li><a href="#">教練培訓課程</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-menu3">
+            <a href="#"><i class="fa-solid fa-book"></i> 回訓專區</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">潛水深度練習</a></li>
+              <li><a href="#">自潛安全戒護</a></li>
+              <li><a href="#">平靜水域練習</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-menu4">
+            <a href="#"><i class="fa-regular fa-address-book"></i> 服務據點</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">東北角</a></li>
+              <li><a href="#">恆春</a></li>
+              <li><a href="#">小琉球</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-user"></i></a>
+          </li>
+          <li>
+            <a href="#" onclick="toggleCart()">
+              <i class="fas fa-shopping-cart"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 購物車側邊欄 -->
+    <div class="cart" id="cart">
+      <div class="cart-header">
+        <div class="cart-container">
+          <span>購物車</span>
+          <button class="close-btn" onclick="toggleCart()">✖</button>
+          <table>
+            <thead>
+              <tr>
+                <th>商品名稱</th>
+                <th>數量</th>
+                <th>價錢</th>
+                <th>刪除</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <!-- 購物車內容將動態添加 -->
+            </tbody>
+          </table>
+          <div class="Checkout">
+            <h3 id="total-price">總金額：0 元</h3>
+            <a href="./購物車.html" style="text-decoration: none"
+              ><button class="Button-Checkout">訂單結帳</button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="product-container">
+        <div class="product-gallery">
+          <div class="small-images">
+            <img
+              src="./裝備照片jpg/防寒衣/01-1.webp"
+              class="small-img"
+              alt="小圖1"
+            />
+            <img
+              src="./裝備照片jpg/防寒衣/01-2.webp"
+              class="small-img"
+              alt="小圖2"
+            />
+          </div>
+          <img
+            style="
+              width: 500px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 400px;
+              height: 400px;
+              border-radius: 10px;
+              overflow: hidden;
+              background-color: #fff;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            "
+            class="product-img"
+            src="./裝備照片jpg/防寒衣/01-1.webp"
+            alt="商品圖片"
+          />
+        </div>
+
+        <!-- 右側商品資訊區 -->
+        <div class="product-details">
+          <h1>TRUDIVE防寒衣女款</h1>
+          <p>・商品介紹</p>
+          <p>-材質：外彩色滑面+內超彈布料</p>
+          <p>-厚度：3mm （公差正負0.3mm）</p>
+
+          <h2>
+            <span>NT$:<span id="price">12600</span></span>
+          </h2>
+
+          <label for="size">尺寸：</label>
+          <select id="size">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+          </select>
+
+          <label for="color">顏色：</label>
+          <select id="color">
+            <option value="白色">白色</option>
+            <option value="黑色">黑色</option>
+          </select>
+
+          <label for="quantity">數量：</label>
+          <input type="number" id="quantity" min="1" value="1" />
+
+          <button class="btn" onclick="addToCart()">加入購物車</button>
+          <button class="btn" onclick="buyNow()">直接購買</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <section class="logo">
+        <h3>
+          <img src="./images/person-swimming-solid.svg" alt="logo" />自由潛水
+        </h3>
+      </section>
+      <section class="links">
+        <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
+        <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
+        <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
+        <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
+      </section>
+    </footer>
+
+    <script>
+      const mainImage = document.querySelector(".product-img");
+      const smallImages = document.querySelectorAll(".small-img");
+
+      smallImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          mainImage.src = img.src;
+        });
+      });
+      function addToCart() {
+        const size = document.getElementById("size").value;
+        const color = document.getElementById("color").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        const price = parseInt(document.getElementById("price").textContent);
+
+        if (!size || !color || !quantity || !price) {
+          alert("請選擇完整的商品資訊！");
+          return;
+        }
+
+        // 產生 PID（固定對應）
+        const pid = `TRUDIVE防寒衣女款-${size}-${color}`;
+
+        // 取得購物車資料（如果沒有則初始化為空陣列）
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // 查找購物車內是否已有相同的商品
+        const existingItem = cart.find((item) => item.pid === pid);
+
+        if (existingItem) {
+          // 如果已經有該商品，則增加數量
+          existingItem.quantity += quantity;
+          existingItem.total = existingItem.quantity * existingItem.price;
+        } else {
+          // 如果購物車內沒有該商品，則新增
+          const product = {
+            pid: pid, // 商品唯一識別碼
+            name: "TRUDIVE防寒衣女款",
+            size: size,
+            color: color,
+            quantity: quantity,
+            price: price,
+            total: price * quantity,
+          };
+          cart.push(product);
+        }
+
+        // 更新 localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("商品已成功加入購物車！");
+      }
+
+      function buyNow() {
+        addToCart();
+        window.location.href = "購物車.html"; // 跳轉到購物車頁面
+      }
+      function showContents(x, contentId) {
+        var tabs = document.querySelectorAll(".btn"); // 抓取所有按鈕
+        var contents = document.querySelectorAll(".contents"); // 抓取所有內容區塊
+
+        // 移除所有按鈕和內容的 'show' 類別
+        tabs.forEach((tab) => tab.classList.remove("show"));
+        contents.forEach((content) => content.classList.remove("show"));
+
+        // 設定目前點擊的按鈕與內容區塊
+        x.classList.add("show");
+        document.getElementById(contentId).classList.add("show");
+
+        // 更新網址參數
+        var url = new URL(window.location);
+        url.searchParams.set("tab", contentId); // 設定 `tab` 參數
+        window.history.pushState(null, "", url); // 更新網址但不重新載入頁面
+      }
+
+      // 🚀 當頁面載入時，自動切換到對應的標籤
+      window.onload = function () {
+        var params = new URLSearchParams(window.location.search);
+        var tabId = params.get("tab"); // 取得 `tab` 參數值
+
+        if (tabId) {
+          var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
+          if (targetTab) {
+            targetTab.click(); // 觸發對應按鈕的點擊事件
+          }
+        }
+      };
+
+      // 測試區 底部
+      function toggleCart() {
+        document.getElementById("cart").classList.toggle("open");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceContainer = document.getElementById("total-price");
+
+        function renderCart() {
+          cartItemsContainer.innerHTML = "";
+          let totalPrice = 0;
+
+          cart.forEach((item) => {
+            totalPrice += item.total;
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${item.name}</td>
+              <td>${item.quantity}</td>
+              <td>${item.price} 元</td>
+              <td><button class="btn1" onclick="removeFromCart('${item.pid}')"><i class="fas fa-trash-alt"></i></button></td>
+              `;
+            cartItemsContainer.appendChild(row);
+          });
+
+          totalPriceContainer.textContent = `總金額：${totalPrice} 元`;
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        window.updateQuantity = function (pid, change) {
+          let item = cart.find((item) => item.pid === pid);
+          if (item) {
+            item.quantity += change;
+            if (item.quantity < 1) {
+              item.quantity = 1; // 防止數量變成 0
+            }
+            item.total = item.quantity * item.price; // 確保價格計算正確
+            renderCart();
+          }
+        };
+
+        window.removeFromCart = function (pid) {
+          cart = cart.filter((item) => item.pid !== pid);
+          renderCart();
+        };
+
+        renderCart();
+      });
+    </script>
+  </body>
+</html>
