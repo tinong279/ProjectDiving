@@ -11,71 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style/style展示.css" />
-
-    <style type="text/css">
-      .container {
-        position: relative;
-        width: 100%;
-
-        height: 250vh;
-        padding-top: 100px;
-
-        overflow: hidden;
-        border-radius: 10px;
-        /* box-shadow: 0px 4px 20px 1px rgba(3, 3, 3, 0.5); */
-        display: flex;
-      }
-      .container .tabBtns {
-        flex-basis: 15%;
-        padding: 10px;
-        background-color: rgb(181, 162, 125);
-        border-right: 1px solid rgb(181, 162, 125);
-        /* border: 2px solid red; */
-      }
-      .container .tabContents {
-        flex-basis: 85%;
-        background-color: wheat;
-        /* background-image: linear-gradient(
-          to right,
-          #b5fefe,
-          rgb(200, 234, 243)
-        ); */
-        padding: 20px 30px 20px 40px;
-        font-size: 20px;
-      }
-      .tabContents h2 {
-        padding-bottom: 10px;
-      }
-      .tabContents h3 {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        color: #555;
-      }
-      .tabContents .contents {
-        display: none;
-      }
-      .tabContents .show {
-        display: block;
-      }
-      .tabBtns .btn {
-        text-align: center;
-        padding: 20px;
-        margin-bottom: 10px;
-        border-radius: 10px 30px;
-        text-transform: uppercase;
-        font-size: 20px;
-        cursor: pointer;
-        color: white;
-      }
-      .tabBtns .btn:hover {
-        background-color: #846732;
-      }
-      .tabBtns .show {
-        background-color: rgb(132, 103, 50);
-      }
-    </style>
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
     <header>
@@ -83,14 +19,28 @@
         <ul>
           <section class="logo">
             <img src="./潛點介紹jpg/person-swimming-solid.svg" alt="自由潛水" />
-            <a href="../1.潛水網站/潛水網站最新.html" style="text-decoration: none;"><h1>自由潛水</h1></a>
+            <a
+              href="../1.潛水網站/潛水網站最新.html"
+              style="text-decoration: none"
+              ><h1>自由潛水</h1></a
+            >
           </section>
           <li class="dropdown-menu1">
             <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
             <ul class="dropdown-menu">
               <li><a href="../3.裝備購物/index.html">自潛蛙鞋</a></li>
-              <li><a href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/index.html?tab=content_2">面鏡/呼吸管</a></li>
-              <li><a href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/index.html?tab=content_3">防寒衣</a></li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/index.html?tab=content_2"
+                  >面鏡/呼吸管</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/index.html?tab=content_3"
+                  >防寒衣</a
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown-menu2">
@@ -182,7 +132,10 @@
     <footer>
       <section class="logo">
         <h3>
-          <img src="./潛點介紹jpg/person-swimming-solid.svg" alt="logo" />自由潛水
+          <img
+            src="./潛點介紹jpg/person-swimming-solid.svg"
+            alt="logo"
+          />自由潛水
         </h3>
       </section>
       <section class="links">
@@ -193,51 +146,37 @@
       </section>
     </footer>
     <script type="text/JavaScript">
-                  // function showContents(x, contentId) {
-                  //   var tabs = document.querySelectorAll(".btn");
-                  //   var contents = document.querySelectorAll(".contents");
 
-                  //   tabs.forEach((tab) => tab.classList.remove("show"));
-                  //   contents.forEach((content) => content.classList.remove("show"));
-
-                  //   x.classList.add("show");
-                  //   document.getElementById(contentId).classList.add("show");
-
-                  // }
-
-                  // 測試區
                   function showContents(x, contentId) {
-        var tabs = document.querySelectorAll(".btn"); // 抓取所有按鈕
-        var contents = document.querySelectorAll(".contents"); // 抓取所有內容區塊
+        var tabs = document.querySelectorAll(".btn");
+        var contents = document.querySelectorAll(".contents");
 
-        // 移除所有按鈕和內容的 'show' 類別
+
         tabs.forEach((tab) => tab.classList.remove("show"));
         contents.forEach((content) => content.classList.remove("show"));
 
-        // 設定目前點擊的按鈕與內容區塊
+
         x.classList.add("show");
         document.getElementById(contentId).classList.add("show");
 
-        // 更新網址參數
+
         var url = new URL(window.location);
-        url.searchParams.set("tab", contentId); // 設定 `tab` 參數
-        window.history.pushState(null, "", url); // 更新網址但不重新載入頁面
+        url.searchParams.set("tab", contentId);
+        window.history.pushState(null, "", url);
       }
 
-      // 🚀 當頁面載入時，自動切換到對應的標籤
+
       window.onload = function () {
         var params = new URLSearchParams(window.location.search);
-        var tabId = params.get("tab"); // 取得 `tab` 參數值
+        var tabId = params.get("tab");
 
         if (tabId) {
           var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
           if (targetTab) {
-            targetTab.click(); // 觸發對應按鈕的點擊事件
+            targetTab.click();
           }
         }
       };
-
-            // 測試區 底部
     </script>
   </body>
 </html>

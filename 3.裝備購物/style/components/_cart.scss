@@ -1,0 +1,145 @@
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.cart {
+  position: fixed;
+  top: 105px;
+  right: -100%;
+  width: 400px;
+  height: 400px;
+  background: white;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 5px;
+
+  &.open {
+    right: 5px;
+  }
+
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .close-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+
+    &:hover {
+      color: rgb(139, 0, 12);
+    }
+  }
+
+  .cart-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+
+  .cart-footer {
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    text-align: center;
+
+    .checkout-btn {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.btn1 {
+  color: rgb(124, 187, 226);
+  background: none;
+  border: none;
+
+  &:hover {
+    color: rgb(19, 96, 144);
+  }
+}
+
+.quantity-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  margin: 2px;
+}
+
+.Checkout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+#total-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Button-Checkout {
+  padding: 10px 10px;
+  border-radius: 5px;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

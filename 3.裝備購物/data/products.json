@@ -1,0 +1,89 @@
+[
+  {
+    "id": "v3-fin",
+    "name": "V3碳纖蛙鞋",
+    "price": 14900,
+    "description": "裸版尺寸80x19.5cm，折腳長度65cm，角度30度",
+    "sizes": ["S", "M", "L"],
+    "colors": ["白色", "金色", "藍色", "紅色", "紫色"],
+    "images": [
+      "./裝備照片jpg/蛙鞋01v3.webp",
+      "./裝備照片jpg/蛙鞋01v3-1.webp",
+      "./裝備照片jpg/蛙鞋01v3-2.webp"
+    ]
+  },
+  {
+    "id": "Molchanovs-fin",
+    "name": "Molchanovs碳纖長蛙",
+    "price": 17500,
+    "description": "板子長度74.9cm，較為省力，在體力和推進力取得平衡",
+    "sizes": ["S", "M", "L"],
+    "colors": ["白色", "金色", "藍色", "紅色", "黑色"],
+    "images": [
+      "./裝備照片jpg/蛙鞋02-1.webp",
+      "./裝備照片jpg/蛙鞋02-2.webp",
+      "./裝備照片jpg/蛙鞋02-3.webp"
+    ]
+  },
+  {
+    "id": "MICROMASK-mask",
+    "name": "MICROMASK面鏡",
+    "price": 1700,
+    "description": [
+      "寬視野x低容積-運動性能優異的自由潛水面鏡",
+      "柔軟矽膠裙邊/鼻翼-密合度佳/極度好捏鼻平壓"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["白色", "黑色"],
+    "images": [
+      "./裝備照片jpg/面鏡呼吸管/蛙鏡01-1.webp",
+      "./裝備照片jpg/面鏡呼吸管/蛙鏡01-2.webp"
+    ]
+  },
+  {
+    "id": "FREEDOMCEOS-mask",
+    "name": "FREEDOMCEOS面鏡",
+    "price": 2500,
+    "description": [
+      "專利圓角裙緣設計",
+      "輕量化雙重材質鏡框設計，強化撞擊耐受度並增加手感"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["靛藍", "黑色", "桃紅"],
+    "images": [
+      "./裝備照片jpg/面鏡呼吸管/蛙鏡02-1.webp",
+      "./裝備照片jpg/面鏡呼吸管/蛙鏡02-2.webp",
+      "./裝備照片jpg/面鏡呼吸管/蛙鏡02-3.webp"
+    ]
+  },
+  {
+    "id": "TRUDIVE-womanwetsuit",
+    "name": "TRUDIVE防寒衣女款",
+    "price": 12600,
+    "description": [
+      "材質：外彩色滑面+內超彈布料",
+      "厚度：3mm （公差正負0.3mm）"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["白色", "黑色"],
+    "images": [
+      "./裝備照片jpg/防寒衣/01-1.webp",
+      "./裝備照片jpg/防寒衣/01-2.webp"
+    ]
+  },
+  {
+    "id": "TRUDIVE-manwetsuit",
+    "name": "TRUDIVE防寒衣男款",
+    "price": 12600,
+    "description": [
+      "材質：外彩色滑面+內超彈布料",
+      "厚度：3mm （公差正負0.3mm）"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["白色", "黑色"],
+    "images": [
+      "./裝備照片jpg/防寒衣/02-1.webp",
+      "./裝備照片jpg/防寒衣/02-2.webp"
+    ]
+  }
+]

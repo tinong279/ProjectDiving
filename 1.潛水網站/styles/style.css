@@ -121,7 +121,7 @@ body header nav ul li ul li a:hover {
 }
 body main section.background-img {
   min-height: 100vh;
-  background-image: url(../images/綠島.jpg);
+  background-image: url(./images/綠島.jpg);
   background-size: cover;
   background-position: center;
   transition: all 0.75s ease;

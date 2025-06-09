@@ -11,18 +11,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style/style購物.css" />
+    <link rel="stylesheet" href="./style/main.css" />
     <style>
       body {
         font-family: Arial, sans-serif;
-        /* margin: 20px; */
+
         height: 130vh;
       }
       .cart-container {
         max-width: 900px;
         margin: auto;
         text-align: center;
-        margin-top: 150px; 
+        margin-top: 150px;
       }
       table {
         width: 100%;
@@ -53,18 +53,12 @@
         margin: 2px;
       }
       .Checkout {
-        /* border: 2px solid red; */
         display: flex;
-        flex-direction: row; /* 讓元素縱向排列 */
-        align-items: center; /* 水平置中 */
-        justify-content: center; /* 垂直置中 */
-        gap: 50px; /* 控制項目間距 */
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
         padding: 20px;
-        /* background-color: #f8f8f8; */
-        /* border-radius: 10px; */
-        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-        /* max-width: 300px;
-        margin: 0 auto; 確保整個區塊在頁面上置中 */
       }
       #total-price {
         font-size: 18px;
@@ -72,11 +66,8 @@
       }
       .Button-Checkout {
         padding: 10px 20px;
-        /* background-color: #28a745;
-        color: white;*/
-        /* border: none; */
+
         border-radius: 5px;
-        /* cursor: pointer; */
       }
       .Button-Checkout:active {
         transform: scale(0.98); /* 按下時縮小，不用改變顏色 */
@@ -89,18 +80,28 @@
         <ul>
           <section class="logo">
             <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
-            <a href="../1.潛水網站/潛水網站最新.html" style="text-decoration: none;"><h1>自由潛水</h1></a>
+            <a
+              href="../1.潛水網站/潛水網站最新.html"
+              style="text-decoration: none"
+              ><h1>自由潛水</h1></a
+            >
           </section>
           <li class="dropdown-menu1">
             <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
             <ul class="dropdown-menu">
-<<<<<<< HEAD
               <li><a href="./購物首頁.html">自潛蛙鞋</a></li>
-=======
-              <li><a href="./index.html">自潛蛙鞋</a></li>
->>>>>>> c9bb106cc4946754a1059398749b58616880b4f0
-              <li><a href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_2">面鏡/呼吸管</a></li>
-              <li><a href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_3">防寒衣</a></li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_2"
+                  >面鏡/呼吸管</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_3"
+                  >防寒衣</a
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown-menu2">
@@ -160,11 +161,12 @@
       </table>
       <div class="Checkout">
         <h3 id="total-price">總金額：0 元</h3>
-<<<<<<< HEAD
-        <a href="../1.潛水網站/潛水網站最新.html" style="text-decoration: none;"><button class="Button-Checkout">結帳</button></a>
-=======
-        <a href="../1.潛水網站/潛水網站最新.html" style="text-decoration: none;"><button class="Button-Checkout" onclick="showAlert()" >結帳</button></a>
->>>>>>> c9bb106cc4946754a1059398749b58616880b4f0
+
+        <a href="../1.潛水網站/潛水網站最新.html" style="text-decoration: none"
+          ><button class="Button-Checkout" onclick="showAlert()">
+            結帳
+          </button></a
+        >
       </div>
     </div>
     <footer>
@@ -195,18 +197,18 @@
             totalPrice += item.total;
             const row = document.createElement("tr");
             row.innerHTML = `
-              <td>${item.name}</td>
-              <td>${item.size}</td>
-              <td>${item.color}</td>
-              <td>
-                <button class="quantity-btn" onclick="updateQuantity('${item.pid}', -1)">−</button>
-                ${item.quantity}
-                <button class="quantity-btn" onclick="updateQuantity('${item.pid}', 1)">+</button>
-              </td>
-              <td>${item.price} 元</td>
-              <td>${item.total} 元</td>
-              <td><button class="btn" onclick="removeFromCart('${item.pid}')">移除</button></td>
-            `;
+                    <td>${item.name}</td>
+                    <td>${item.size}</td>
+                    <td>${item.color}</td>
+                    <td>
+                      <button class="quantity-btn" onclick="updateQuantity('${item.pid}', -1)">−</button>
+                      ${item.quantity}
+                      <button class="quantity-btn" onclick="updateQuantity('${item.pid}', 1)">+</button>
+                    </td>
+                    <td>${item.price} 元</td>
+                    <td>${item.total} 元</td>
+                    <td><button class="btn" onclick="removeFromCart('${item.pid}')">移除</button></td>
+                  `;
             cartItemsContainer.appendChild(row);
           });
 
@@ -233,12 +235,10 @@
 
         renderCart();
       });
-<<<<<<< HEAD
-=======
+
       function showAlert() {
-            alert("結帳完成");
-        }
->>>>>>> c9bb106cc4946754a1059398749b58616880b4f0
+        alert("結帳完成");
+      }
     </script>
   </body>
 </html>

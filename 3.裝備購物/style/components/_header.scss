@@ -1,0 +1,113 @@
+body {
+  background-color: rgb(242, 244, 246);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+header {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  section.logo {
+    flex: 2 1 400px;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    img {
+      width: 6vw;
+      height: 6vw;
+      filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+    }
+  }
+
+  nav {
+    flex: 5 1 500px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #596987;
+    height: 100px;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        height: 102px;
+
+        &.dropdown-menu1:hover .dropdown-menu,
+        &.dropdown-menu2:hover .dropdown-menu,
+        &.dropdown-menu3:hover .dropdown-menu,
+        &.dropdown-menu4:hover .dropdown-menu {
+          display: block;
+          top: 102px;
+          left: 0px;
+        }
+
+        a {
+          justify-content: center;
+          color: white;
+          text-decoration: none;
+          font-size: 1.35rem;
+          transition: all 0.2s ease;
+          padding-bottom: 0.3rem;
+
+          &:hover {
+            color: rgba(255, 57, 120, 0.5);
+            border-bottom: 3px solid rgba(255, 57, 120, 0.5);
+          }
+        }
+
+        ul {
+          display: none;
+          position: absolute;
+          top: 110px;
+          left: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+          width: 150px;
+          border-radius: 5px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li a {
+            font-size: 20px;
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

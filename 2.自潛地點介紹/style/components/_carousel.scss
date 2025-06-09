@@ -1,0 +1,52 @@
+section.sainer {
+  background-color: black;
+  padding: 5rem 4rem;
+  z-index: -1;
+
+  .ainer {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    opacity: 1;
+    transform: translateY(200px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .carousel {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    gap: 10px;
+
+    .container {
+      .content {
+        width: 500px;
+        height: 400px;
+
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .btnContainer {
+      margin: 1px auto;
+      display: flex;
+      justify-content: center;
+      gap: 1px;
+
+      .btn {
+        width: 10px;
+        height: 10px;
+        font-size: 10px;
+      }
+    }
+  }
+}

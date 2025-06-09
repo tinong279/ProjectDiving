@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 170vh;
+  padding-top: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+
+  .tabBtns {
+    flex-basis: 15%;
+    padding: 10px;
+    background-color: rgb(181, 162, 125);
+    border-right: 1px solid rgb(181, 162, 125);
+    color: white;
+
+    .btn {
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px 30px;
+      text-transform: uppercase;
+      font-size: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #846732;
+      }
+
+      &.show {
+        background-color: rgb(132, 103, 50);
+      }
+    }
+  }
+
+  .tabContents {
+    flex-basis: 85%;
+    background-color: wheat;
+    padding: 20px 30px 20px 100px;
+    font-size: 20px;
+    position: sticky;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      color: #555;
+    }
+
+    .contents {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
