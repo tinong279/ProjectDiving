@@ -1,23 +1,19 @@
-setInterval(() => {
-  let topBackground = document.querySelector("section.background-img");
-  if (topBackground.style.backgroundImage == 'url("./images/綠島.jpg")') {
-    topBackground.style.backgroundImage = 'url("./images/蘭嶼八代灣沈船.jpg")';
-  } else if (
-    topBackground.style.backgroundImage == 'url("./images/蘭嶼八代灣沈船.jpg")'
-  ) {
-    topBackground.style.backgroundImage = 'url("./images/小琉球.jpeg")';
-  } else {
-    topBackground.style.backgroundImage = 'url("./images/綠島.jpg")';
-  }
-}, 2500);
+document.addEventListener("DOMContentLoaded", () => {
+  const topBackground = document.querySelector("section.background-img");
 
-// 當頁面滾動時，變更 body 顯示類別以改變導覽列顏色
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 0) {
-    document.body.classList.add("scrolled");
-  } else {
-    document.body.classList.remove("scrolled");
-  }
+  topBackground.style.backgroundImage = 'url("./images/綠島.jpg")';
+
+  const images = [
+    "./images/綠島.jpg",
+    "./images/蘭嶼八代灣沈船.jpg",
+    "./images/小琉球.jpeg",
+  ];
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    topBackground.style.backgroundImage = `url("${images[index]}")`;
+  }, 2500);
 });
 
 // 可調整參數
