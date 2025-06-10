@@ -1,33 +1,28 @@
-function showContents(x, contentId) {
-  var tabs = document.querySelectorAll(".btn"); // 抓取所有按鈕
-  var contents = document.querySelectorAll(".contents"); // 抓取所有內容區塊
+function showContents(x, contentId, skipHistoryUpdate = false) {
+  var tabs = document.querySelectorAll(".btn");
+  var contents = document.querySelectorAll(".contents");
 
-  // 移除所有按鈕和內容的 'show' 類別
   tabs.forEach((tab) => tab.classList.remove("show"));
   contents.forEach((content) => content.classList.remove("show"));
 
-  // 設定目前點擊的按鈕與內容區塊
   x.classList.add("show");
   document.getElementById(contentId).classList.add("show");
 
-  // 更新網址參數
-  var url = new URL(window.location);
-  url.searchParams.set("tab", contentId); // 設定 `tab` 參數
-  window.history.pushState(null, "", url); // 更新網址但不重新載入頁面
+  if (!skipHistoryUpdate) {
+    var url = new URL(window.location);
+    url.searchParams.set("tab", contentId);
+    window.history.pushState(null, "", url);
+  }
 }
 
-// 🚀 當頁面載入時，自動切換到對應的標籤
-window.onload = function () {
-  var params = new URLSearchParams(window.location.search);
-  var tabId = params.get("tab"); // 取得 `tab` 參數值
-
-  if (tabId) {
-    var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
-    if (targetTab) {
-      targetTab.click(); // 觸發對應按鈕的點擊事件
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const tabId = params.get("tab") || "content_1";
+  const targetTab = document.querySelector(`[onclick*="${tabId}"]`);
+  if (targetTab) {
+    showContents(targetTab, tabId, true);
   }
-};
+});
 
 // 測試區 底部
 function toggleCart() {
