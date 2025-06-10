@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +24,7 @@ body.scrolled header nav {
   background-color: rgba(0, 0, 0, 0.5);
   height: 95px;
   transition: height 1s;
+  z-index: 10;
 }
 body img.fixed-image {
   min-height: 100vh;
@@ -124,32 +124,51 @@ body header nav ul li ul li a {
 body header nav ul li ul li a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
-body main section.background-img {
-  min-height: 100vh;
-  background-image: url("../images/綠島.jpg");
-  background-size: cover;
-  background-position: center;
+body main section.background-wrapper {
   position: relative;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
-body main section.background-img div.filter {
-  background-color: rgba(0, 0, 0, 0);
-  width: 100%;
-  min-height: 100vh;
+body main section.background-wrapper .bg-layer {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  z-index: 0;
 }
-body main section.background-img h3 {
+body main section.background-wrapper .bg1 {
+  z-index: 1;
+}
+body main section.background-wrapper .bg2 {
+  z-index: 2;
+}
+body main section.background-wrapper .bg-layer.show {
+  opacity: 1;
+}
+body main section.background-wrapper .content1 {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-size: 2rem;
+  padding: 0;
+}
+body main section.background-wrapper .content1 h4 {
   color: white;
   font-size: 2.5rem;
-  text-align: left;
-  position: absolute; /* 絕對定位 */
-  top: 22rem;
+  text-align: center;
+  position: absolute;
+  top: 30rem;
   left: 6rem;
 }
 body main section.sainer {
@@ -161,8 +180,8 @@ body main section.sainer div.ainer {
   display: flex;
   align-items: center;
   height: 500px;
-  opacity: 1; /* 初始隱藏 */
-  transform: translateY(200px); /* 初始位於下方 */
+  opacity: 1;
+  transform: translateY(200px);
   transition: opacity 1s ease-out, transform 1s ease-out;
   margin-left: 100px;
 }
@@ -202,15 +221,16 @@ body main section.sainer div.carousel div.container div.content img {
      object-fit: cover;
 }
 body main section.sainer div.carousel div.btnContainer {
-  margin: 1px auto;
   display: flex;
-  justify-content: center;
-  gap: 1px;
+  align-items: center;
+  z-index: -1;
+  width: 100%;
+  justify-content: space-between;
 }
 body main section.sainer div.carousel div.btnContainer button.btn {
-  width: 10px;
-  height: 10px;
-  font-size: 10px;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
 }
 body main section.info-circles {
   background-color: white;
@@ -290,7 +310,7 @@ body footer {
 }
 body footer section.logo a {
   display: flex;
-  justify-content: center; /* 水平置中 */
+  justify-content: center;
   align-items: center;
 }
 body footer section.logo img {

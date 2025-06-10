@@ -12,14 +12,18 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preload" as="image" href="./images/綠島.jpg" />
+    <link rel="preload" as="image" href="./images/蘭嶼八代灣沈船.jpg" />
+    <link rel="preload" as="image" href="./images/小琉球.jpeg" />
   </head>
+
   <body>
-    <img
+    <!-- <img
       loading="lazy"
       class="fixed-image"
       src="./images/沖繩.jpg"
       alt="fixed-image"
-    />
+    /> -->
     <header>
       <nav>
         <ul>
@@ -83,9 +87,15 @@
       </nav>
     </header>
     <main>
-      <section class="background-img">
-        <div class="filter"></div>
-        <h3>安排一趟潛水之旅<br />自由自在，探索海洋。</h3>
+      <section class="background-wrapper">
+        <div class="bg-layer">
+          <img src="./images/綠島.jpg" alt="" />
+        </div>
+        <div class="bg-layer bg1"></div>
+        <div class="bg-layer bg2"></div>
+        <div class="content1">
+          <h4>安排一趟潛水之旅<br />自由自在，探索海洋。</h4>
+        </div>
       </section>
 
       <section class="sainer">
@@ -108,8 +118,8 @@
 
             <!-- 左右按鈕 -->
             <div class="btnContainer">
-              <button class="btn btn-prev">&larr;</button>
-              <button class="btn btn-next">&rarr;</button>
+              <button class="btn btn-prev">&lt;</button>
+              <button class="btn btn-next">&gt;</button>
             </div>
           </div>
           <div class="title">
@@ -189,7 +199,6 @@
         <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
       </section>
     </footer>
-
     <script src="./Js/index.js"></script>
   </body>
 </html>
