@@ -90,7 +90,7 @@
             <br />
             在自由潛水界颳起一陣旋風的象鼻岩藍洞、玫瑰花園都在這附近，是近年來IG打卡拍照熱點。藍洞位於象鼻岩下方，由於陽光照進海蝕洞，使海水呈現醉人湖水藍，因而得名，超適合拍自潛美照；玫瑰花園則由十個籃球場大的珊瑚群組成，一朵朵連綿分布，相當壯麗。
           </p>
-          <img src="./潛點介紹jpg/潮境公園.webp" alt="" />
+          <img src="./潛點介紹jpg/潮境公園.webp" alt="潮境公園" />
           <p>
             望海巷灣（潮境公園）：
             <br />
@@ -145,36 +145,34 @@
     </footer>
     <script type="text/JavaScript">
 
-            function showContents(x, contentId,skipHistoryUpdate = false) {
-            var tabs = document.querySelectorAll(".btn");
-            var contents = document.querySelectorAll(".contents");
+                  function showContents(x, contentId,skipHistoryUpdate = false) {
+                  var tabs = document.querySelectorAll(".btn");
+                  var contents = document.querySelectorAll(".contents");
 
 
-            tabs.forEach((tab) => tab.classList.remove("show"));
-            contents.forEach((content) => content.classList.remove("show"));
+                  tabs.forEach((tab) => tab.classList.remove("show"));
+                  contents.forEach((content) => content.classList.remove("show"));
 
 
-            x.classList.add("show");
-            document.getElementById(contentId).classList.add("show");
+                  x.classList.add("show");
+                  document.getElementById(contentId).classList.add("show");
 
 
-             if (!skipHistoryUpdate) {
-             var url = new URL(window.location);
-             url.searchParams.set("tab", contentId);
-             window.history.pushState(null, "", url);
-          }
+                   if (!skipHistoryUpdate) {
+                   var url = new URL(window.location);
+                   url.searchParams.set("tab", contentId);
+                   window.history.pushState(null, "", url);
+                }
+              }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const tabId = params.get("tab") || "content_1";
+        const targetTab = document.querySelector(`[onclick*="${tabId}"]`);
+        if (targetTab) {
+          showContents(targetTab, tabId, true);
         }
-
-          window.onload = function () {
-            var params = new URLSearchParams(window.location.search);
-            var tabId = params.get("tab")|| "content_1";
-
-            var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
-            if (targetTab) {
-
-        showContents(targetTab, tabId, true);
-      }
-          };
+      });
     </script>
   </body>
 </html>
