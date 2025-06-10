@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +40,11 @@ header section.logo img {
   width: 6vw;
   height: 6vw;
   filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+header section.logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header nav {
   flex: 5 1 500px;
@@ -117,6 +123,11 @@ footer {
   left: 0;
   width: 100%;
 }
+footer section.logo a {
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center;
+}
 footer section.logo img {
   width: 5vw;
   filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
@@ -124,6 +135,7 @@ footer section.logo img {
 footer section.logo h3 {
   font-size: 2.5rem;
   text-align: center;
+  color: white;
 }
 footer section.links {
   margin-top: 2rem;

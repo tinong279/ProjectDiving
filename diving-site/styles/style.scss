@@ -59,6 +59,11 @@ body {
         height: 6vw;
         filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
       }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
 
     nav {
@@ -368,6 +373,11 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 
     section.logo {
+      a {
+        display: flex;
+        justify-content: center; /* 水平置中 */
+        align-items: center;
+      }
       img {
         width: 5vw;
         filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
@@ -375,6 +385,7 @@ body {
       h3 {
         font-size: 2.5rem;
         text-align: center;
+        color: white;
       }
     }
     section.links {

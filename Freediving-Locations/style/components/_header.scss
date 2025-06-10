@@ -20,6 +20,11 @@ header {
       height: 6vw;
       filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
     }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   nav {

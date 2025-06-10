@@ -11,6 +11,11 @@ footer {
   width: 100%;
 
   section.logo {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     img {
       width: 5vw;
       filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
@@ -19,6 +24,7 @@ footer {
     h3 {
       font-size: 2.5rem;
       text-align: center;
+      color: white;
     }
   }
 
