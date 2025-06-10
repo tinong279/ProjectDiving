@@ -121,7 +121,7 @@ body header nav ul li ul li a:hover {
 }
 body main section.background-img {
   min-height: 100vh;
-  background-image: url(./images/綠島.jpg);
+  background-image: url("../images/綠島.jpg");
   background-size: cover;
   background-position: center;
   transition: all 0.75s ease;
@@ -165,6 +165,20 @@ body main section.sainer div.ainer {
 body main section.sainer div.ainer.show {
   opacity: 1;
   transform: translateY(0);
+}
+body main section.sainer div.ainer div.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 250px;
+}
+body main section.sainer div.ainer div.title h3 {
+  color: white;
+  font-size: 48px;
+}
+body main section.sainer div.ainer div.title h2 {
+  color: white;
+  font-size: 36px;
 }
 body main section.sainer div.carousel {
   width: 500px;

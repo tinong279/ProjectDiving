@@ -75,16 +75,14 @@
 
     <div class="container">
       <div class="tabBtns">
-        <div class="btn show" onclick="showContents(this,'content_1')">
-          東北角
-        </div>
+        <div class="btn" onclick="showContents(this,'content_1')">東北角</div>
         <div class="btn" onclick="showContents(this,'content_2')">小琉球</div>
         <div class="btn" onclick="showContents(this,'content_3')">綠島</div>
         <div class="btn" onclick="showContents(this,'content_4')">墾丁</div>
       </div>
 
       <div class="tabContents">
-        <div class="contents show" id="content_1">
+        <div class="contents" id="content_1">
           <h2>東北角</h2>
           <img src="./潛點介紹jpg/東北角象鼻岩.webp" alt="東北角象鼻岩" />
           <p>
@@ -147,36 +145,36 @@
     </footer>
     <script type="text/JavaScript">
 
-                  function showContents(x, contentId) {
-        var tabs = document.querySelectorAll(".btn");
-        var contents = document.querySelectorAll(".contents");
+            function showContents(x, contentId,skipHistoryUpdate = false) {
+            var tabs = document.querySelectorAll(".btn");
+            var contents = document.querySelectorAll(".contents");
 
 
-        tabs.forEach((tab) => tab.classList.remove("show"));
-        contents.forEach((content) => content.classList.remove("show"));
+            tabs.forEach((tab) => tab.classList.remove("show"));
+            contents.forEach((content) => content.classList.remove("show"));
 
 
-        x.classList.add("show");
-        document.getElementById(contentId).classList.add("show");
+            x.classList.add("show");
+            document.getElementById(contentId).classList.add("show");
 
 
-        var url = new URL(window.location);
-        url.searchParams.set("tab", contentId);
-        window.history.pushState(null, "", url);
-      }
-
-
-      window.onload = function () {
-        var params = new URLSearchParams(window.location.search);
-        var tabId = params.get("tab");
-
-        if (tabId) {
-          var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
-          if (targetTab) {
-            targetTab.click();
+             if (!skipHistoryUpdate) {
+             var url = new URL(window.location);
+             url.searchParams.set("tab", contentId);
+             window.history.pushState(null, "", url);
           }
         }
-      };
+
+          window.onload = function () {
+            var params = new URLSearchParams(window.location.search);
+            var tabId = params.get("tab")|| "content_1";
+
+            var targetTab = document.querySelector(`[onclick*="${tabId}"]`);
+            if (targetTab) {
+
+        showContents(targetTab, tabId, true);
+      }
+          };
     </script>
   </body>
 </html>
