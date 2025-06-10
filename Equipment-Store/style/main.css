@@ -22,13 +22,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header, footer {
-  padding: 20px;
-  background-color: #153162;
-  color: white;
-  text-align: center;
-}
-
 body {
   background-color: rgb(242, 244, 246);
   position: relative;

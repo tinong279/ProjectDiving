@@ -1,4 +1,7 @@
 function showContents(x, contentId, skipHistoryUpdate = false) {
+  const currentShown = document.querySelector(".contents.show");
+  if (currentShown && currentShown.id === contentId) return;
+
   var tabs = document.querySelectorAll(".btn");
   var contents = document.querySelectorAll(".contents");
 
