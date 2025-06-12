@@ -16,20 +16,25 @@
   <body>
     <header>
       <nav>
+        <section class="logo">
+          <a
+            href="https://diving-site.onrender.com/"
+            style="text-decoration: none"
+            ><img
+              src="./潛點介紹jpg/person-swimming-solid.svg"
+              alt="自由潛水"
+            />
+            <h1>自由潛水</h1></a
+          >
+        </section>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="開啟選單">
+          ☰
+        </button>
         <ul>
-          <section class="logo">
-            <a
-              href="https://diving-site.onrender.com/"
-              style="text-decoration: none"
-              ><img
-                src="./潛點介紹jpg/person-swimming-solid.svg"
-                alt="自由潛水"
-              />
-              <h1>自由潛水</h1></a
-            >
-          </section>
           <li class="dropdown-menu1">
-            <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
+            <a href="https://equipment-store.onrender.com/?tab=content_1"
+              ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+            >
             <ul class="dropdown-menu">
               <li>
                 <a href="https://equipment-store.onrender.com/?tab=content_1"
@@ -50,7 +55,9 @@
           </li>
 
           <li class="dropdown-menu4">
-            <a href="#"><i class="fa-regular fa-address-book"></i> 潛點介紹</a>
+            <a href="https://freediving-locations.onrender.com/?tab=content_1"
+              ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
+            >
             <ul class="dropdown-menu">
               <li>
                 <a
@@ -109,7 +116,7 @@
 
         <div class="contents" id="content_2">
           <h2>小琉球</h2>
-          <img src="./潛點介紹jpg/小琉球.png" alt="小琉球" style="width: 50%" />
+          <img src="./潛點介紹jpg/小琉球.png" alt="小琉球" />
           <p>
             如果想看可愛的海龜，當然要來有「龜之島」之稱的小琉球啦～除了是台灣唯一的珊瑚礁島，也是唯一沒有東北季風干擾的潛水勝地。終年水溫達25度C左右，除颱風來襲外，是個一年四季都適合潛水的地方。再加上小琉球是「離台灣本島最近的離島」，交通便利快速加上碧海藍天好天氣，讓來這裡的遊客都能擁有好心情。成為所有熱愛海洋的潛水客必去景點！
           </p>
@@ -117,7 +124,7 @@
 
         <div class="contents" id="content_3">
           <h2>綠島</h2>
-          <img src="./潛點介紹jpg/綠島.jpg" alt="綠島" style="width: 50%" />
+          <img src="./潛點介紹jpg/綠島.jpg" alt="綠島" />
           <p>
             綠島為一個中央有山的島嶼，除了颱風之外，全年度都適合潛水。冬天吹東北季風的時候適合潛島嶼的南面，夏天吹南風或西南風的時候適合潛島嶼的北面。
             因黑潮流經，水溫全年宜人，夏天水溫可高達30度，甚至在冬天寒流的時候，海水溫度都有22度左右，所以冬天要來綠島潛水其實也很適合，只要上岸立刻穿好防風外套即可。
@@ -128,7 +135,7 @@
 
         <div class="contents" id="content_4">
           <h2>墾丁</h2>
-          <img src="./潛點介紹jpg/墾丁.jpg" alt="小琉球" style="width: 50%" />
+          <img src="./潛點介紹jpg/墾丁.jpg" alt="小琉球" />
           <p>
             這裡之所以叫做星砂灣，是因為這裡的海砂比較特別是由多種有孔蟲的外殼堆積而形成，細看的時候形狀真的就像是星星非常特別，不過因為遭到遊客濫採，或者被業者拿去做成紀念品販售總之目前星砂數量大幅減少，但大家還是可以仔細找找看。務必記得！只能欣賞，請勿帶走唷～
           </p>
@@ -155,34 +162,38 @@
     </footer>
     <script type="text/JavaScript">
 
-                  function showContents(x, contentId,skipHistoryUpdate = false) {
-                  var tabs = document.querySelectorAll(".btn");
-                  var contents = document.querySelectorAll(".contents");
+                        function showContents(x, contentId,skipHistoryUpdate = false) {
+                        var tabs = document.querySelectorAll(".btn");
+                        var contents = document.querySelectorAll(".contents");
 
 
-                  tabs.forEach((tab) => tab.classList.remove("show"));
-                  contents.forEach((content) => content.classList.remove("show"));
+                        tabs.forEach((tab) => tab.classList.remove("show"));
+                        contents.forEach((content) => content.classList.remove("show"));
 
 
-                  x.classList.add("show");
-                  document.getElementById(contentId).classList.add("show");
+                        x.classList.add("show");
+                        document.getElementById(contentId).classList.add("show");
 
 
-                   if (!skipHistoryUpdate) {
-                   var url = new URL(window.location);
-                   url.searchParams.set("tab", contentId);
-                   window.history.pushState(null, "", url);
-                }
+                         if (!skipHistoryUpdate) {
+                         var url = new URL(window.location);
+                         url.searchParams.set("tab", contentId);
+                         window.history.pushState(null, "", url);
+                      }
+                    }
+
+              document.addEventListener("DOMContentLoaded", function () {
+              const params = new URLSearchParams(window.location.search);
+              const tabId = params.get("tab") || "content_1";
+              const targetTab = document.querySelector(`[onclick*="${tabId}"]`);
+              if (targetTab) {
+                showContents(targetTab, tabId, true);
               }
-
-        document.addEventListener("DOMContentLoaded", function () {
-        const params = new URLSearchParams(window.location.search);
-        const tabId = params.get("tab") || "content_1";
-        const targetTab = document.querySelector(`[onclick*="${tabId}"]`);
-        if (targetTab) {
-          showContents(targetTab, tabId, true);
-        }
-      });
+            });
+            function toggleMenu() {
+        const navUl = document.querySelector("nav ul");
+        navUl.classList.toggle("active");
+      }
     </script>
   </body>
 </html>

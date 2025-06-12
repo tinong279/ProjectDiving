@@ -10,22 +10,3 @@ body {
   width: 100%;
   background-color: $bg-light;
 }
-
-@media screen and (max-width: 700px) {
-  header section.logo {
-    flex-direction: column;
-
-    img {
-      width: 50vw;
-      height: 50vw;
-    }
-  }
-
-  header nav ul {
-    flex-direction: column;
-
-    li {
-      padding: 0.5rem 0.25rem;
-    }
-  }
-}

@@ -46,6 +46,7 @@ header section.logo a {
   align-items: center;
 }
 header nav {
+  display: flex;
   flex: 5 1 500px;
   position: fixed;
   top: 0;
@@ -54,6 +55,17 @@ header nav {
   z-index: 1000;
   background-color: #596987;
   height: 100px;
+}
+header nav .hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1100;
 }
 header nav ul {
   display: flex;
@@ -110,6 +122,91 @@ header nav ul li.dropdown-menu1:hover .dropdown-menu, header nav ul li.dropdown-
   left: 0px;
 }
 
+@media (max-width: 768px) {
+  header section.logo {
+    margin-left: 10px;
+  }
+  header section.logo h1 {
+    font-size: 2rem;
+  }
+  header section.logo img {
+    width: 50px;
+    height: 50px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    height: 5rem;
+  }
+  header nav .hamburger {
+    display: block;
+    top: 10px;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  header nav ul.active {
+    max-height: 500px;
+  }
+  header nav ul li {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+  header nav ul li .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  header nav ul li .dropdown-menu li a {
+    padding: 8px 16px;
+    font-size: 1rem;
+    display: block;
+  }
+  header .logo {
+    margin-left: 0;
+  }
+  header .logo h1 {
+    font-size: 2rem;
+  }
+  header .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 480px) {
+  header section.logo {
+    margin-left: 10px;
+  }
+  header section.logo h1 {
+    font-size: 1.5rem;
+  }
+  header section.logo img {
+    width: 40px;
+    height: 40px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    height: 4rem;
+  }
+  header nav .hamburger {
+    display: block;
+    top: 15px;
+    font-size: 1.5rem;
+  }
+}
 footer {
   display: flex;
   padding: 2rem;
@@ -144,6 +241,28 @@ footer section.links a img {
   margin: 0rem 1rem;
 }
 
+@media (max-width: 768px) {
+  footer section.logo img {
+    width: 10%;
+  }
+  footer section.logo h3 {
+    font-size: 1.75rem;
+  }
+  footer section.links a img {
+    width: 4vh;
+  }
+}
+@media (max-width: 480px) {
+  footer section.logo img {
+    width: 10%;
+  }
+  footer section.logo h3 {
+    font-size: 1.25rem;
+  }
+  footer section.links a img {
+    width: 3vh;
+  }
+}
 .container {
   position: relative;
   width: 100%;
@@ -184,19 +303,38 @@ footer section.links a img {
 .container .tabContents h2 {
   padding-bottom: 10px;
 }
-.container .tabContents h3 {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  color: #555;
-}
 .container .tabContents .contents {
   display: none;
+}
+.container .tabContents .contents img {
+  width: 55%;
 }
 .container .tabContents .show {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+    width: 100%;
+    height: 250vh;
+    padding-top: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+  }
+  .container .tabContents .contents img {
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding-top: 60px;
+  }
+  .container .tabContents .contents img {
+    width: 100%;
+  }
+}
 body {
   position: relative;
   margin: 0;
@@ -208,20 +346,4 @@ body {
   min-height: 100vh;
   width: 100%;
   background-color: #ede;
-}
-
-@media screen and (max-width: 700px) {
-  header section.logo {
-    flex-direction: column;
-  }
-  header section.logo img {
-    width: 50vw;
-    height: 50vw;
-  }
-  header nav ul {
-    flex-direction: column;
-  }
-  header nav ul li {
-    padding: 0.5rem 0.25rem;
-  }
 }/*# sourceMappingURL=main.css.map */

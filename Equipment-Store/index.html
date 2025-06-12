@@ -16,21 +16,23 @@
   <body>
     <header>
       <nav>
+        <section class="logo">
+          <a
+            href="https://diving-site.onrender.com"
+            style="text-decoration: none"
+          >
+            <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
+            <h1>自由潛水</h1></a
+          >
+        </section>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="開啟選單">
+          ☰
+        </button>
         <ul>
-          <section class="logo">
-            <a
-              href="https://diving-site.onrender.com"
-              style="text-decoration: none"
-            >
-              <img
-                src="./裝備照片jpg/person-swimming-solid.svg"
-                alt="自由潛水"
-              />
-              <h1>自由潛水</h1></a
-            >
-          </section>
           <li class="dropdown-menu1">
-            <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
+            <a href="https://equipment-store.onrender.com/?tab=content_1"
+              ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+            >
             <ul class="dropdown-menu">
               <li>
                 <a href="https://equipment-store.onrender.com/?tab=content_1"
@@ -50,7 +52,9 @@
             </ul>
           </li>
           <li class="dropdown-menu4">
-            <a href="#"><i class="fa-regular fa-address-book"></i> 潛點介紹</a>
+            <a href="https://freediving-locations.onrender.com/?tab=content_1"
+              ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
+            >
             <ul class="dropdown-menu">
               <li>
                 <a
@@ -80,7 +84,7 @@
           </li>
 
           <li>
-            <a href="#" onclick="toggleCart()">
+            <a id="cartLink" href="#" onclick="toggleCart()">
               <i class="fas fa-shopping-cart"></i
             ></a>
           </li>

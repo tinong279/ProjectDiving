@@ -76,3 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderCart();
 });
+function toggleMenu() {
+  const navUl = document.querySelector("nav ul");
+  navUl.classList.toggle("active");
+}
+
+function updateHrefForResponsive() {
+  const link = document.getElementById("cartLink");
+  const mediaQuery = window.matchMedia("(max-width: 1024px)");
+
+  if (mediaQuery.matches) {
+    link.setAttribute("href", "./購物車.html"); // ✅ 小螢幕改網址
+    link.removeAttribute("onclick"); // ✅ 可選：移除原來的 toggleCart()
+  } else {
+    link.setAttribute("href", "#"); // ✅ 大螢幕恢復原來行為
+    link.setAttribute("onclick", "toggleCart()");
+  }
+}
+
+// 初次載入時執行一次
+updateHrefForResponsive();
+
+// 畫面大小改變時自動調整
+window.addEventListener("resize", updateHrefForResponsive);

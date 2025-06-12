@@ -1,27 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
+@charset "UTF-8";
 body {
   background-color: rgb(242, 244, 246);
   position: relative;
@@ -33,6 +10,23 @@ body {
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -62,6 +56,7 @@ header section.logo a {
   align-items: center;
 }
 header nav {
+  display: flex;
   flex: 5 1 500px;
   position: fixed;
   top: 0;
@@ -71,12 +66,24 @@ header nav {
   background-color: #596987;
   height: 100px;
 }
+header nav .hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1100;
+}
 header nav ul {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
   padding: 0;
   margin: 0;
+  width: 450px;
 }
 header nav ul li {
   position: relative;
@@ -126,6 +133,91 @@ header nav ul li ul li a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
+@media (max-width: 768px) {
+  header section.logo {
+    margin-left: 10px;
+  }
+  header section.logo h1 {
+    font-size: 2rem;
+  }
+  header section.logo img {
+    width: 50px;
+    height: 50px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    height: 5rem;
+  }
+  header nav .hamburger {
+    display: block;
+    top: 10px;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  header nav ul.active {
+    max-height: 500px;
+  }
+  header nav ul li {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+  header nav ul li .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  header nav ul li .dropdown-menu li a {
+    padding: 8px 16px;
+    font-size: 1rem;
+    display: block;
+  }
+  header .logo {
+    margin-left: 0;
+  }
+  header .logo h1 {
+    font-size: 2rem;
+  }
+  header .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 480px) {
+  header section.logo {
+    margin-left: 10px;
+  }
+  header section.logo h1 {
+    font-size: 1.5rem;
+  }
+  header section.logo img {
+    width: 40px;
+    height: 40px;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+    height: 4rem;
+  }
+  header nav .hamburger {
+    display: block;
+    top: 15px;
+    font-size: 1.5rem;
+  }
+}
 footer {
   display: flex;
   padding: 2rem;
@@ -133,7 +225,6 @@ footer {
   align-items: center;
   color: white;
   background-color: #153162;
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -158,6 +249,41 @@ footer section.links {
 footer section.links a img {
   width: 5vh;
   margin: 0rem 1rem;
+}
+
+@media (max-width: 768px) {
+  footer section.logo img {
+    width: 10%;
+  }
+  footer section.logo h3 {
+    font-size: 1.75rem;
+  }
+  footer section.links a img {
+    width: 4vh;
+  }
+}
+@media (max-width: 480px) {
+  footer section.logo img {
+    width: 10%;
+  }
+  footer section.logo h3 {
+    font-size: 1.25rem;
+  }
+  footer section.links a img {
+    width: 3vh;
+  }
+}
+.shopping-cart {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  height: 120vh;
+}
+.shopping-cart thead th {
+  border: none;
+}
+.shopping-cart #cart-items td {
+  border: none;
 }
 
 .cart-button {
@@ -249,7 +375,8 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
-table th, table td {
+table th,
+table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
@@ -294,20 +421,62 @@ table th, table td {
   transform: scale(0.98);
 }
 
+.Btn {
+  background-color: rgb(242, 244, 246);
+  color: black;
+  border: 1px solid black;
+}
+
+.Btno {
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .cart {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .Btn {
+    display: none;
+  }
+  .Total {
+    display: none;
+  }
+  .Quantity {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .Quantity {
+    display: flex;
+  }
+}
 .product-list {
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
+  gap: 25px;
+  place-items: center;
+}
+@media (max-width: 1024px) {
+  .product-list {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 768px) {
   .product-list {
+    width: 80%;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 480px) {
   .product-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
   }
 }
 .product-list .product {
@@ -317,12 +486,23 @@ table th, table td {
   text-align: center;
   border-radius: 10px;
   z-index: 1;
+  width: 100%;
 }
 .product-list .product img {
-  width: 200px;
+  width: 100%;
 }
 .product-list .product a {
   display: block;
+}
+.product-list .product h4 {
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* 顯示 2 行 */
+  overflow: hidden;
+}
+.product-list .product p {
+  font-size: 15px;
 }
 
 .product-container {
@@ -332,10 +512,12 @@ table th, table td {
   align-items: flex-start;
   padding: 20px;
   gap: 30px;
+  margin: 0 auto;
+  height: 100vh;
 }
 .product-container .product-gallery {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
 }
 .product-container .product-gallery .product-img {
   width: 400px;
@@ -345,6 +527,7 @@ table th, table td {
 .product-container .product-gallery .small-images {
   display: flex;
   gap: 10px;
+  flex-direction: column;
 }
 .product-container .product-gallery .small-images .small-img {
   width: 80px;
@@ -388,7 +571,6 @@ table th, table td {
 .container {
   position: relative;
   width: 100%;
-  height: 170vh;
   padding-top: 100px;
   overflow: hidden;
   border-radius: 10px;
@@ -419,22 +601,53 @@ table th, table td {
 .container .tabContents {
   flex-basis: 85%;
   background-color: wheat;
-  padding: 20px 30px 20px 100px;
+  padding: 25px;
   font-size: 20px;
   position: sticky;
+  justify-content: center;
 }
 .container .tabContents h2 {
-  padding-bottom: 10px;
-}
-.container .tabContents h3 {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  color: #555;
+  padding-bottom: 20px;
 }
 .container .tabContents .contents {
   display: none;
+  place-items: center;
 }
 .container .tabContents .contents.show {
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .tabBtns {
+    display: flex;
+  }
+  .container .tabBtns .btn {
+    padding: 10px;
+    margin-bottom: 0px;
+    width: 30vh;
+  }
+  .container .tabContents {
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-top: 80px;
+  }
+  .container .tabBtns .btn {
+    padding: 8px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding-top: 60px;
+  }
+  .container .tabBtns .btn {
+    padding: 6px;
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=main.css.map */

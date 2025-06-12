@@ -1,3 +1,17 @@
+.shopping-cart {
+  width: 100%;
+  // margin-left: 30px;
+  text-align: center;
+  margin-top: 150px;
+  height: 120vh;
+
+  thead th {
+    border: none;
+  }
+  #cart-items td {
+    border: none;
+  }
+}
 .cart-button {
   position: fixed;
   top: 20px;
@@ -96,7 +110,8 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 
-  th, td {
+  th,
+  td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -141,5 +156,38 @@ table {
 
   &:active {
     transform: scale(0.98);
+  }
+}
+.Btn {
+  background-color: rgb(242, 244, 246);
+  color: black;
+  border: 1px solid black;
+  // padding: 8px;
+}
+.Btno {
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .cart {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .Btn {
+    display: none;
+  }
+  .Total {
+    display: none;
+  }
+  .Quantity {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .Quantity {
+    display: flex;
   }
 }

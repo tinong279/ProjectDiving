@@ -194,26 +194,7 @@ const init = () => {
 init();
 
 function toggleMenu() {
-  const navUl = document.querySelector("nav ul");
-  navUl.classList.toggle("active");
+  const nav = document.getElementById("main-nav");
+  nav.classList.toggle("mobile-show");
+  nav.classList.toggle("mobile-hidden");
 }
-
-// const setContentHeight = function () {
-//   // 基於內容物的高度來設定容器高度
-//   carousel.style.height = contentComputeStyle.height;
-// };
-function updateHrefForResponsive() {
-  // const link = document.getElementById("cartLink");
-  const mediaQuery = window.matchMedia("(max-width: 480px)");
-  const mediaquery = window.matchMedia("(max-width: 768px)");
-  if (mediaQuery.matches || mediaquery.matches) {
-    setContentHeight();
-    setContentWidth();
-  }
-}
-
-// 初次載入時執行一次
-updateHrefForResponsive();
-
-// 畫面大小改變時自動調整
-window.addEventListener("resize", updateHrefForResponsive);

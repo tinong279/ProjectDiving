@@ -5,7 +5,7 @@ footer {
   align-items: center;
   color: white;
   background-color: #153162;
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -34,6 +34,44 @@ footer {
     a img {
       width: 5vh;
       margin: 0rem 1rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    section.logo {
+      img {
+        width: 10%;
+      }
+      h3 {
+        font-size: 1.75rem;
+      }
+    }
+    section.links {
+      a {
+        img {
+          width: 4vh;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    section.logo {
+      img {
+        width: 10%;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+    section.links {
+      a {
+        img {
+          width: 3vh;
+        }
+      }
     }
   }
 }

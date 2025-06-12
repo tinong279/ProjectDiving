@@ -12,138 +12,88 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style/main.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-
-        height: 130vh;
-      }
-      .cart-container {
-        max-width: 900px;
-        margin: auto;
-        text-align: center;
-        margin-top: 150px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-      }
-      th,
-      td {
-        border: 1px solid #555;
-        padding: 10px;
-        text-align: center;
-      }
-      .btn {
-        background-color: #ff4d4d;
-        color: white;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-      }
-      .btn:hover {
-        background-color: #cc0000;
-      }
-      .quantity-btn {
-        cursor: pointer;
-        padding: 5px 10px;
-        border: 1px solid #ddd;
-        background-color: #f8f8f8;
-        margin: 2px;
-      }
-      .Checkout {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
-        padding: 20px;
-      }
-      #total-price {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .Button-Checkout {
-        padding: 10px 20px;
-
-        border-radius: 5px;
-      }
-      .Button-Checkout:active {
-        transform: scale(0.98); /* 按下時縮小，不用改變顏色 */
-      }
-    </style>
   </head>
   <body>
     <header>
       <nav>
-        <ul>
-          <section class="logo">
+        <section class="logo">
+          <a
+            href="https://diving-site.onrender.com"
+            style="text-decoration: none"
+          >
             <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
-            <a
-              href="../1.潛水網站/潛水網站最新.html"
-              style="text-decoration: none"
-              ><h1>自由潛水</h1></a
-            >
-          </section>
+            <h1>自由潛水</h1></a
+          >
+        </section>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="開啟選單">
+          ☰
+        </button>
+        <ul>
           <li class="dropdown-menu1">
-            <a href="#"><i class="fa-solid fa-location-pin"></i> 潛水裝備</a>
+            <a href="https://equipment-store.onrender.com/?tab=content_1"
+              ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+            >
             <ul class="dropdown-menu">
-              <li><a href="./購物首頁.html">自潛蛙鞋</a></li>
               <li>
-                <a
-                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_2"
+                <a href="https://equipment-store.onrender.com/?tab=content_1"
+                  >自潛蛙鞋</a
+                >
+              </li>
+              <li>
+                <a href="https://equipment-store.onrender.com/?tab=content_2"
                   >面鏡/呼吸管</a
                 >
               </li>
               <li>
-                <a
-                  href="http://127.0.0.1:5501/3.%E8%A3%9D%E5%82%99%E8%B3%BC%E7%89%A9/%E8%B3%BC%E7%89%A9%E9%A6%96%E9%A0%81.html?tab=content_3"
+                <a href="https://equipment-store.onrender.com/?tab=content_3"
                   >防寒衣</a
                 >
               </li>
             </ul>
           </li>
-          <li class="dropdown-menu2">
-            <a href="#"
-              ><i class="fa-solid fa-right-to-bracket"></i> 課程報名</a
+          <li class="dropdown-menu4">
+            <a href="https://freediving-locations.onrender.com/?tab=content_1"
+              ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
             >
             <ul class="dropdown-menu">
-              <li><a href="#">自潛課程</a></li>
-              <li><a href="#">水肺課程</a></li>
-              <li><a href="#">教練培訓課程</a></li>
+              <li>
+                <a
+                  href="https://freediving-locations.onrender.com/?tab=content_1"
+                  >東北角</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://freediving-locations.onrender.com/?tab=content_2"
+                  >小琉球</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://freediving-locations.onrender.com/?tab=content_3"
+                  >綠島</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://freediving-locations.onrender.com/?tab=content_4"
+                  >墾丁</a
+                >
+              </li>
             </ul>
           </li>
-          <li class="dropdown-menu3">
-            <a href="#"><i class="fa-solid fa-book"></i> 回訓專區</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">潛水深度練習</a></li>
-              <li><a href="#">自潛安全戒護</a></li>
-              <li><a href="#">平靜水域練習</a></li>
-            </ul>
-          </li>
-          <li class="dropdown-menu4">
-            <a href="#"><i class="fa-regular fa-address-book"></i> 服務據點</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">東北角</a></li>
-              <li><a href="#">恆春</a></li>
-              <li><a href="#">小琉球</a></li>
-            </ul>
-          </li>
+
           <li>
-            <a href="#"><i class="fas fa-user"></i></a>
-          </li>
-          <li>
-            <a href="#" onclick="toggleCart()">
+            <a id="cartLink" href="#" onclick="toggleCart()">
               <i class="fas fa-shopping-cart"></i
             ></a>
           </li>
         </ul>
       </nav>
     </header>
-    <div class="cart-container">
+    <div class="shopping-cart">
       <h2>購物車</h2>
-      <table>
+      <table class="shopping-table">
         <thead>
           <tr>
             <th>商品名稱</th>
@@ -151,13 +101,11 @@
             <th>顏色</th>
             <th>數量</th>
             <th>價錢</th>
-            <th>總共</th>
-            <th>操作</th>
+            <th class="Total">總共</th>
+            <th class="Btn"></th>
           </tr>
         </thead>
-        <tbody id="cart-items">
-          <!-- 購物車內容將動態添加 -->
-        </tbody>
+        <tbody id="cart-items"></tbody>
       </table>
       <div class="Checkout">
         <h3 id="total-price">總金額：0 元</h3>
@@ -171,9 +119,13 @@
     </div>
     <footer>
       <section class="logo">
-        <h3>
-          <img src="./images/person-swimming-solid.svg" alt="logo" />自由潛水
-        </h3>
+        <a
+          href="https://diving-site.onrender.com/"
+          style="text-decoration: none"
+        >
+          <img src="./images/person-swimming-solid.svg" alt="logo" />
+          <h3>自由潛水</h3></a
+        >
       </section>
       <section class="links">
         <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
@@ -200,14 +152,14 @@
                     <td>${item.name}</td>
                     <td>${item.size}</td>
                     <td>${item.color}</td>
-                    <td>
+                    <td class="Quantity">
                       <button class="quantity-btn" onclick="updateQuantity('${item.pid}', -1)">−</button>
                       ${item.quantity}
                       <button class="quantity-btn" onclick="updateQuantity('${item.pid}', 1)">+</button>
                     </td>
                     <td>${item.price} 元</td>
-                    <td>${item.total} 元</td>
-                    <td><button class="btn" onclick="removeFromCart('${item.pid}')">移除</button></td>
+                    <td class="Total">${item.total} 元</td>
+                    <td class="Btn"><button class="Btno" onclick="removeFromCart('${item.pid}')">刪除</button></td>
                   `;
             cartItemsContainer.appendChild(row);
           });
@@ -239,6 +191,28 @@
       function showAlert() {
         alert("結帳完成");
       }
+
+      function toggleMenu() {
+        const navUl = document.querySelector("nav ul");
+        navUl.classList.toggle("active");
+      }
+
+      function updateHrefForResponsive() {
+        const link = document.getElementById("cartLink");
+        const mediaQuery = window.matchMedia("(max-width: 1024px)");
+
+        if (mediaQuery.matches) {
+          link.setAttribute("href", "./購物車.html");
+          link.removeAttribute("onclick");
+        } else {
+          link.setAttribute("href", "#");
+          link.setAttribute("onclick", "toggleCart()");
+        }
+      }
+
+      updateHrefForResponsive();
+
+      window.addEventListener("resize", updateHrefForResponsive);
     </script>
   </body>
 </html>

@@ -1,13 +1,14 @@
 .container {
   position: relative;
   width: 100%;
-  height: 170vh;
+  // height: 150vh;
   padding-top: 100px;
   overflow: hidden;
   border-radius: 10px;
   display: flex;
 
   .tabBtns {
+    // display: flex;
     flex-basis: 15%;
     padding: 10px;
     background-color: rgb(181, 162, 125);
@@ -15,6 +16,7 @@
     color: white;
 
     .btn {
+      // width: 25%;
       text-align: center;
       padding: 20px;
       margin-bottom: 10px;
@@ -36,26 +38,61 @@
   .tabContents {
     flex-basis: 85%;
     background-color: wheat;
-    padding: 20px 30px 20px 100px;
+    padding: 25px;
     font-size: 20px;
     position: sticky;
+    justify-content: center;
 
     h2 {
-      padding-bottom: 10px;
+      padding-bottom: 20px;
     }
-
-    h3 {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-      color: #555;
-    }
-
     .contents {
       display: none;
+      place-items: center;
 
       &.show {
         display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+
+    .tabBtns {
+      display: flex;
+      .btn {
+        padding: 10px;
+        margin-bottom: 0px;
+        width: 30vh;
+      }
+    }
+    .tabContents {
+      padding: 20px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-top: 80px;
+    .tabBtns {
+      .btn {
+        padding: 8px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 60px;
+    .tabBtns {
+      .btn {
+        padding: 6px;
+        font-size: 12px;
       }
     }
   }

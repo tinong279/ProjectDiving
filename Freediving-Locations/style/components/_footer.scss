@@ -39,3 +39,41 @@ footer {
     }
   }
 }
+@media (max-width: 768px) {
+  footer {
+    section.logo {
+      img {
+        width: 10%;
+      }
+      h3 {
+        font-size: 1.75rem;
+      }
+    }
+    section.links {
+      a {
+        img {
+          width: 4vh;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    section.logo {
+      img {
+        width: 10%;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+    section.links {
+      a {
+        img {
+          width: 3vh;
+        }
+      }
+    }
+  }
+}
