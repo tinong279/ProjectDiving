@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  height: 250vh;
+  height: 220vh;
   padding-top: 100px;
   overflow: hidden;
   border-radius: 10px;
@@ -43,13 +43,6 @@
       padding-bottom: 10px;
     }
 
-    // h3 {
-    //   position: absolute;
-    //   right: 20px;
-    //   bottom: 20px;
-    //   color: #555;
-    // }
-
     .contents {
       display: none;
       img {
@@ -64,13 +57,21 @@
 }
 @media (max-width: 768px) {
   .container {
-    position: relative;
-    width: 100%;
-    height: 250vh;
     padding-top: 80px;
-    overflow: hidden;
-    border-radius: 10px;
-    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    .tabBtns {
+      flex-basis: 0;
+      padding: 10px;
+      display: flex;
+      .btn {
+        width: 30%;
+        margin-bottom: 0;
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+
     .tabContents {
       .contents {
         img {
@@ -82,7 +83,20 @@
 }
 @media (max-width: 480px) {
   .container {
-    padding-top: 60px;
+    padding-top: 62px;
+    height: 180vh;
+    .tabBtns {
+      flex-basis: 0;
+      padding: 10px;
+      display: flex;
+      .btn {
+        width: 30%;
+        margin-bottom: 0;
+        padding: 5px;
+        font-size: 15px;
+      }
+    }
+
     .tabContents {
       .contents {
         img {
