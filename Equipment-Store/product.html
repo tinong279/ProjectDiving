@@ -12,136 +12,145 @@
     <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <section class="logo">
-          <a
-            href="https://diving-site.onrender.com"
-            style="text-decoration: none"
-          >
-            <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
-            <h1>自由潛水</h1></a
-          >
-        </section>
-        <button class="hamburger" onclick="toggleMenu()" aria-label="開啟選單">
-          ☰
-        </button>
-        <ul>
-          <li class="dropdown-menu1">
-            <a href="https://equipment-store.onrender.com/?tab=content_1"
-              ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+    <div class="wrapper">
+      <header>
+        <nav>
+          <section class="logo">
+            <a
+              href="https://diving-site.onrender.com"
+              style="text-decoration: none"
             >
-            <ul class="dropdown-menu">
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_1"
-                  >自潛蛙鞋</a
-                >
-              </li>
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_2"
-                  >面鏡/呼吸管</a
-                >
-              </li>
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_3"
-                  >防寒衣</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown-menu4">
-            <a href="https://freediving-locations.onrender.com/?tab=content_"
-              ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
+              <img
+                src="./裝備照片jpg/person-swimming-solid.svg"
+                alt="自由潛水"
+              />
+              <h1>自由潛水</h1></a
             >
-            <ul class="dropdown-menu">
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_1"
-                  >東北角</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_2"
-                  >小琉球</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_3"
-                  >綠島</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_4"
-                  >墾丁</a
-                >
-              </li>
-            </ul>
-          </li>
+          </section>
+          <button
+            class="hamburger"
+            onclick="toggleMenu()"
+            aria-label="開啟選單"
+          >
+            ☰
+          </button>
+          <ul>
+            <li class="dropdown-menu1">
+              <a href="https://equipment-store.onrender.com/?tab=content_1"
+                ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_1"
+                    >自潛蛙鞋</a
+                  >
+                </li>
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_2"
+                    >面鏡/呼吸管</a
+                  >
+                </li>
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_3"
+                    >防寒衣</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-menu4">
+              <a href="https://freediving-locations.onrender.com/?tab=content_"
+                ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_1"
+                    >東北角</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_2"
+                    >小琉球</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_3"
+                    >綠島</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_4"
+                    >墾丁</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-          <li>
-            <a id="cartLink" href="#" onclick="toggleCart()">
-              <i class="fas fa-shopping-cart"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+            <li>
+              <a id="cartLink" href="#" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-    <div class="container">
-      <div class="product-container" id="product-detail">
-        <!-- 商品詳細資料將由 JS 動態插入 -->
+      <div class="container">
+        <div class="product-container" id="product-detail">
+          <!-- 商品詳細資料將由 JS 動態插入 -->
+        </div>
       </div>
-    </div>
 
-    <!-- 購物車側邊欄 -->
-    <div class="cart" id="cart">
-      <div class="cart-header">
-        <div class="cart-container">
-          <span>購物車</span>
-          <button class="close-btn" onclick="toggleCart()">✖</button>
-          <table>
-            <thead>
-              <tr>
-                <th>商品名稱</th>
-                <th>數量</th>
-                <th>價錢</th>
-                <th>刪除</th>
-              </tr>
-            </thead>
-            <tbody id="cart-items">
-              <!-- 購物車內容將動態添加 -->
-            </tbody>
-          </table>
-          <div class="Checkout">
-            <h3 id="total-price">總金額：0 元</h3>
-            <a href="./購物車.html" style="text-decoration: none"
-              ><button class="Button-Checkout">訂單結帳</button></a
-            >
+      <!-- 購物車側邊欄 -->
+      <div class="cart" id="cart">
+        <div class="cart-header">
+          <div class="cart-container">
+            <span>購物車</span>
+            <button class="close-btn" onclick="toggleCart()">✖</button>
+            <table>
+              <thead>
+                <tr>
+                  <th>商品名稱</th>
+                  <th>數量</th>
+                  <th>價錢</th>
+                  <th>刪除</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+                <!-- 購物車內容將動態添加 -->
+              </tbody>
+            </table>
+            <div class="Checkout">
+              <h3 id="total-price">總金額：0 元</h3>
+              <a href="./購物車.html" style="text-decoration: none"
+                ><button class="Button-Checkout">訂單結帳</button></a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <footer>
-      <section class="logo">
-        <a
-          href="https://diving-site.onrender.com/"
-          style="text-decoration: none"
-        >
-          <img src="./images/person-swimming-solid.svg" alt="logo" />
-          <h3>自由潛水</h3></a
-        >
-      </section>
-      <section class="links">
-        <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
-        <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
-        <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
-        <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
-      </section>
-    </footer>
+      <footer>
+        <section class="logo">
+          <a
+            href="https://diving-site.onrender.com/"
+            style="text-decoration: none"
+          >
+            <img src="./images/person-swimming-solid.svg" alt="logo" />
+            <h3>自由潛水</h3></a
+          >
+        </section>
+        <section class="links">
+          <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
+          <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
+          <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
+          <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
+        </section>
+      </footer>
+    </div>
 
     <script src="js/product.js"></script>
   </body>

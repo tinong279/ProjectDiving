@@ -14,334 +14,478 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <header>
-      <nav>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <section class="logo">
+            <a
+              href="https://diving-site.onrender.com"
+              style="text-decoration: none"
+            >
+              <img
+                src="./裝備照片jpg/person-swimming-solid.svg"
+                alt="自由潛水"
+              />
+              <h1>自由潛水</h1></a
+            >
+          </section>
+          <button
+            class="hamburger"
+            onclick="toggleMenu()"
+            aria-label="開啟選單"
+          >
+            ☰
+          </button>
+          <ul>
+            <li class="dropdown-menu1">
+              <a href="https://equipment-store.onrender.com/?tab=content_1"
+                ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_1"
+                    >自潛蛙鞋</a
+                  >
+                </li>
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_2"
+                    >面鏡/呼吸管</a
+                  >
+                </li>
+                <li>
+                  <a href="https://equipment-store.onrender.com/?tab=content_3"
+                    >防寒衣</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown-menu4">
+              <a href="https://freediving-locations.onrender.com/?tab=content_1"
+                ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_1"
+                    >東北角</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_2"
+                    >小琉球</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_3"
+                    >綠島</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://freediving-locations.onrender.com/?tab=content_4"
+                    >墾丁</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a id="cartLink" href="#" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="container">
+        <div class="tabBtns">
+          <div class="btn" onclick="showContents(this,'content_1')">
+            自潛蛙鞋
+          </div>
+          <div class="btn" onclick="showContents(this,'content_2')">
+            面鏡/呼吸管
+          </div>
+          <div class="btn" onclick="showContents(this,'content_3')">防寒衣</div>
+        </div>
+
+        <div class="tabContents">
+          <div class="contents" id="content_1">
+            <h2>自潛蛙鞋</h2>
+
+            <div class="product-list">
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品A"
+                data-price="100"
+              >
+                <a href="./product.html?id=v3-fin">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/蛙鞋01v3.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>V3碳纖長蛙</h4>
+                <p>價格: $14900</p>
+              </div>
+
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品B"
+                data-price="200"
+              >
+                <a href="./product.html?id=Molchanovs-fin">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/蛙鞋02-1.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>Molchanovs碳纖長蛙</h4>
+                <p>價格: $17500</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品C"
+                data-price="300"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋03-1.webp" alt="" />
+                <h4>FinsGhost塑膠長蛙</h4>
+                <p>價格: $5200</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品D"
+                data-price="400"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋04-1.webp" alt="" />
+                <h4>PATHOS碳纖長蛙</h4>
+                <p>價格: $12800</p>
+              </div>
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品E"
+                data-price="100"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋05.webp" alt="" />
+                <h4>玻纖長蛙-清透銀河</h4>
+                <p>價格: $5900</p>
+              </div>
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品F"
+                data-price="200"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋06.webp" alt="" />
+                <h4>玻纖長蛙-清透花</h4>
+                <p>價格: $5900</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品G"
+                data-price="300"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋07.webp" alt="" />
+                <h4>MANTRA碳纖長蛙</h4>
+                <p>價格: $18500</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品H"
+                data-price="400"
+              >
+                <img loading="lazy" src="./裝備照片jpg/蛙鞋08.webp" alt="" />
+                <h4>PRANA碳纖長蛙</h4>
+                <p>價格: $9350</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contents" id="content_2">
+            <h2>面鏡/呼吸管</h2>
+            <div class="product-list">
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品A"
+                data-price="100"
+              >
+                <a href="./product.html?id=MICROMASK-mask">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/面鏡呼吸管/蛙鏡01-1.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>MICROMASK面鏡</h4>
+                <p>價格: $1700</p>
+              </div>
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品B"
+                data-price="200"
+              >
+                <a href="./product.html?id=FREEDOMCEOS-mask">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/面鏡呼吸管/蛙鏡02-1.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>FREEDOMCEOS面鏡</h4>
+                <p>價格: $2500</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品C"
+                data-price="300"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/呼吸管03-1.webp"
+                  alt=""
+                />
+                <h4>MED軟式呼吸管</h4>
+                <p>價格: $590</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品D"
+                data-price="400"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/蛙鏡04-1.webp"
+                  alt=""
+                />
+                <h4>SPHERAX面鏡</h4>
+                <p>價格: $2650</p>
+              </div>
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品E"
+                data-price="100"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/蛙鏡05-1.webp"
+                  alt=""
+                />
+                <h4>LEADERFINS面鏡呼吸管組</h4>
+                <p>價格: $1250</p>
+              </div>
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品F"
+                data-price="200"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/呼吸管06-1.webp"
+                  alt=""
+                />
+                <h4>APNEASNORKEL軟式呼吸管</h4>
+                <p>價格: $750</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品G"
+                data-price="300"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/呼吸管07-1.webp"
+                  alt=""
+                />
+                <h4>SHIFT軟式呼吸管</h4>
+                <p>價格: $590</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品H"
+                data-price="400"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/面鏡呼吸管/呼吸管08-1.webp"
+                  alt=""
+                />
+                <h4>ZoomPro呼吸管</h4>
+                <p>價格: $700</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contents" id="content_3">
+            <h2>防寒衣</h2>
+            <div class="product-list">
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品A"
+                data-price="100"
+              >
+                <a href="./product.html?id=TRUDIVE-womanwetsuit">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/防寒衣/01-1.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>TRUDIVE防寒衣女款</h4>
+                <p>價格: $12600</p>
+              </div>
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品B"
+                data-price="200"
+              >
+                <a href="./product.html?id=TRUDIVE-manwetsuit">
+                  <img
+                    loading="lazy"
+                    src="./裝備照片jpg/防寒衣/02-1.webp"
+                    alt=""
+                  />
+                </a>
+                <h4>TRUDIVE防寒衣男款</h4>
+                <p>價格: $12600</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品C"
+                data-price="300"
+              >
+                <img loading="lazy" src="./裝備照片jpg/防寒衣/03.webp" alt="" />
+                <h4>MOBBY'S訂製款3mm</h4>
+                <p>價格: $12300</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品D"
+                data-price="400"
+              >
+                <img
+                  loading="lazy"
+                  src="./裝備照片jpg/防寒衣/04-1.webp"
+                  alt=""
+                />
+                <h4>AIRFUSION防寒衣</h4>
+                <p>價格: $4900</p>
+              </div>
+              <div
+                class="product"
+                data-id="1"
+                data-name="產品E"
+                data-price="100"
+              >
+                <img loading="lazy" src="./裝備照片jpg/防寒衣/05.png" alt="" />
+                <h4>TRUREAL防寒衣</h4>
+                <p>價格: $7000</p>
+              </div>
+              <div
+                class="product"
+                data-id="2"
+                data-name="產品F"
+                data-price="200"
+              >
+                <img loading="lazy" src="./裝備照片jpg/防寒衣/06.png" alt="" />
+                <h4>TRUDIVE防寒衣5mm</h4>
+                <p>價格: $9500</p>
+              </div>
+              <div
+                class="product"
+                data-id="3"
+                data-name="產品G"
+                data-price="300"
+              >
+                <img loading="lazy" src="./裝備照片jpg/防寒衣/07.png" alt="" />
+                <h4>TRUDIVE防寒衣男款</h4>
+                <p>價格: $9000</p>
+              </div>
+              <div
+                class="product"
+                data-id="4"
+                data-name="產品H"
+                data-price="400"
+              >
+                <img loading="lazy" src="./裝備照片jpg/防寒衣/08.webp" alt="" />
+                <h4>BARREL防寒衣</h4>
+                <p>價格: $9600</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 購物車側邊欄 -->
+      <div class="cart" id="cart">
+        <div class="cart-header">
+          <div class="cart-container">
+            <span>購物車</span>
+            <button class="close-btn" onclick="toggleCart()">✖</button>
+            <table>
+              <thead>
+                <tr>
+                  <th>商品名稱</th>
+                  <th>數量</th>
+                  <th>價錢</th>
+                  <th>刪除</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+                <!-- 購物車內容將動態添加 -->
+              </tbody>
+            </table>
+            <div class="Checkout">
+              <h3 id="total-price">總金額：0 元</h3>
+              <a href="./購物車.html" style="text-decoration: none"
+                ><button class="Button-Checkout">訂單結帳</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
         <section class="logo">
           <a
-            href="https://diving-site.onrender.com"
+            href="https://diving-site.onrender.com/"
             style="text-decoration: none"
           >
-            <img src="./裝備照片jpg/person-swimming-solid.svg" alt="自由潛水" />
-            <h1>自由潛水</h1></a
+            <img src="./images/person-swimming-solid.svg" alt="logo" />
+            <h3>自由潛水</h3></a
           >
         </section>
-        <button class="hamburger" onclick="toggleMenu()" aria-label="開啟選單">
-          ☰
-        </button>
-        <ul>
-          <li class="dropdown-menu1">
-            <a href="https://equipment-store.onrender.com/?tab=content_1"
-              ><i class="fa-solid fa-location-pin"></i> 潛水裝備</a
-            >
-            <ul class="dropdown-menu">
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_1"
-                  >自潛蛙鞋</a
-                >
-              </li>
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_2"
-                  >面鏡/呼吸管</a
-                >
-              </li>
-              <li>
-                <a href="https://equipment-store.onrender.com/?tab=content_3"
-                  >防寒衣</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown-menu4">
-            <a href="https://freediving-locations.onrender.com/?tab=content_1"
-              ><i class="fa-regular fa-address-book"></i> 潛點介紹</a
-            >
-            <ul class="dropdown-menu">
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_1"
-                  >東北角</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_2"
-                  >小琉球</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_3"
-                  >綠島</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://freediving-locations.onrender.com/?tab=content_4"
-                  >墾丁</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a id="cartLink" href="#" onclick="toggleCart()">
-              <i class="fas fa-shopping-cart"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container">
-      <div class="tabBtns">
-        <div class="btn" onclick="showContents(this,'content_1')">自潛蛙鞋</div>
-        <div class="btn" onclick="showContents(this,'content_2')">
-          面鏡/呼吸管
-        </div>
-        <div class="btn" onclick="showContents(this,'content_3')">防寒衣</div>
-      </div>
-
-      <div class="tabContents">
-        <div class="contents" id="content_1">
-          <h2>自潛蛙鞋</h2>
-
-          <div class="product-list">
-            <div class="product" data-id="1" data-name="產品A" data-price="100">
-              <a href="./product.html?id=v3-fin">
-                <img loading="lazy" src="./裝備照片jpg/蛙鞋01v3.webp" alt="" />
-              </a>
-              <h4>V3碳纖長蛙</h4>
-              <p>價格: $14900</p>
-            </div>
-
-            <div class="product" data-id="2" data-name="產品B" data-price="200">
-              <a href="./product.html?id=Molchanovs-fin">
-                <img loading="lazy" src="./裝備照片jpg/蛙鞋02-1.webp" alt="" />
-              </a>
-              <h4>Molchanovs碳纖長蛙</h4>
-              <p>價格: $17500</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品C" data-price="300">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋03-1.webp" alt="" />
-              <h4>FinsGhost塑膠長蛙</h4>
-              <p>價格: $5200</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品D" data-price="400">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋04-1.webp" alt="" />
-              <h4>PATHOS碳纖長蛙</h4>
-              <p>價格: $12800</p>
-            </div>
-            <div class="product" data-id="1" data-name="產品E" data-price="100">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋05.webp" alt="" />
-              <h4>玻纖長蛙-清透銀河</h4>
-              <p>價格: $5900</p>
-            </div>
-            <div class="product" data-id="2" data-name="產品F" data-price="200">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋06.webp" alt="" />
-              <h4>玻纖長蛙-清透花</h4>
-              <p>價格: $5900</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品G" data-price="300">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋07.webp" alt="" />
-              <h4>MANTRA碳纖長蛙</h4>
-              <p>價格: $18500</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品H" data-price="400">
-              <img loading="lazy" src="./裝備照片jpg/蛙鞋08.webp" alt="" />
-              <h4>PRANA碳纖長蛙</h4>
-              <p>價格: $9350</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="contents" id="content_2">
-          <h2>面鏡/呼吸管</h2>
-          <div class="product-list">
-            <div class="product" data-id="1" data-name="產品A" data-price="100">
-              <a href="./product.html?id=MICROMASK-mask">
-                <img
-                  loading="lazy"
-                  src="./裝備照片jpg/面鏡呼吸管/蛙鏡01-1.webp"
-                  alt=""
-                />
-              </a>
-              <h4>MICROMASK面鏡</h4>
-              <p>價格: $1700</p>
-            </div>
-            <div class="product" data-id="2" data-name="產品B" data-price="200">
-              <a href="./product.html?id=FREEDOMCEOS-mask">
-                <img
-                  loading="lazy"
-                  src="./裝備照片jpg/面鏡呼吸管/蛙鏡02-1.webp"
-                  alt=""
-                />
-              </a>
-              <h4>FREEDOMCEOS面鏡</h4>
-              <p>價格: $2500</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品C" data-price="300">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/呼吸管03-1.webp"
-                alt=""
-              />
-              <h4>MED軟式呼吸管</h4>
-              <p>價格: $590</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品D" data-price="400">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/蛙鏡04-1.webp"
-                alt=""
-              />
-              <h4>SPHERAX面鏡</h4>
-              <p>價格: $2650</p>
-            </div>
-            <div class="product" data-id="1" data-name="產品E" data-price="100">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/蛙鏡05-1.webp"
-                alt=""
-              />
-              <h4>LEADERFINS面鏡呼吸管組</h4>
-              <p>價格: $1250</p>
-            </div>
-            <div class="product" data-id="2" data-name="產品F" data-price="200">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/呼吸管06-1.webp"
-                alt=""
-              />
-              <h4>APNEASNORKEL軟式呼吸管</h4>
-              <p>價格: $750</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品G" data-price="300">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/呼吸管07-1.webp"
-                alt=""
-              />
-              <h4>SHIFT軟式呼吸管</h4>
-              <p>價格: $590</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品H" data-price="400">
-              <img
-                loading="lazy"
-                src="./裝備照片jpg/面鏡呼吸管/呼吸管08-1.webp"
-                alt=""
-              />
-              <h4>ZoomPro呼吸管</h4>
-              <p>價格: $700</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="contents" id="content_3">
-          <h2>防寒衣</h2>
-          <div class="product-list">
-            <div class="product" data-id="1" data-name="產品A" data-price="100">
-              <a href="./product.html?id=TRUDIVE-womanwetsuit">
-                <img
-                  loading="lazy"
-                  src="./裝備照片jpg/防寒衣/01-1.webp"
-                  alt=""
-                />
-              </a>
-              <h4>TRUDIVE防寒衣女款</h4>
-              <p>價格: $12600</p>
-            </div>
-            <div class="product" data-id="2" data-name="產品B" data-price="200">
-              <a href="./product.html?id=TRUDIVE-manwetsuit">
-                <img
-                  loading="lazy"
-                  src="./裝備照片jpg/防寒衣/02-1.webp"
-                  alt=""
-                />
-              </a>
-              <h4>TRUDIVE防寒衣男款</h4>
-              <p>價格: $12600</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品C" data-price="300">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/03.webp" alt="" />
-              <h4>MOBBY'S訂製款3mm</h4>
-              <p>價格: $12300</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品D" data-price="400">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/04-1.webp" alt="" />
-              <h4>AIRFUSION防寒衣</h4>
-              <p>價格: $4900</p>
-            </div>
-            <div class="product" data-id="1" data-name="產品E" data-price="100">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/05.png" alt="" />
-              <h4>TRUREAL防寒衣</h4>
-              <p>價格: $7000</p>
-            </div>
-            <div class="product" data-id="2" data-name="產品F" data-price="200">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/06.png" alt="" />
-              <h4>TRUDIVE防寒衣5mm</h4>
-              <p>價格: $9500</p>
-            </div>
-            <div class="product" data-id="3" data-name="產品G" data-price="300">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/07.png" alt="" />
-              <h4>TRUDIVE防寒衣男款</h4>
-              <p>價格: $9000</p>
-            </div>
-            <div class="product" data-id="4" data-name="產品H" data-price="400">
-              <img loading="lazy" src="./裝備照片jpg/防寒衣/08.webp" alt="" />
-              <h4>BARREL防寒衣</h4>
-              <p>價格: $9600</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <section class="links">
+          <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
+          <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
+          <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
+          <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
+        </section>
+      </footer>
     </div>
 
-    <!-- 購物車側邊欄 -->
-    <div class="cart" id="cart">
-      <div class="cart-header">
-        <div class="cart-container">
-          <span>購物車</span>
-          <button class="close-btn" onclick="toggleCart()">✖</button>
-          <table>
-            <thead>
-              <tr>
-                <th>商品名稱</th>
-                <th>數量</th>
-                <th>價錢</th>
-                <th>刪除</th>
-              </tr>
-            </thead>
-            <tbody id="cart-items">
-              <!-- 購物車內容將動態添加 -->
-            </tbody>
-          </table>
-          <div class="Checkout">
-            <h3 id="total-price">總金額：0 元</h3>
-            <a href="./購物車.html" style="text-decoration: none"
-              ><button class="Button-Checkout">訂單結帳</button></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <section class="logo">
-        <a
-          href="https://diving-site.onrender.com/"
-          style="text-decoration: none"
-        >
-          <img src="./images/person-swimming-solid.svg" alt="logo" />
-          <h3>自由潛水</h3></a
-        >
-      </section>
-      <section class="links">
-        <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
-        <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
-        <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
-        <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
-      </section>
-    </footer>
     <script src="js/index.js"></script>
   </body>
 </html>

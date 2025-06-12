@@ -4,14 +4,17 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
   color: #333;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1,
@@ -149,6 +152,7 @@ header nav ul li ul li a:hover {
     align-items: flex-start;
     padding: 0 1rem;
     height: 5rem;
+    position: static;
   }
   header nav .hamburger {
     display: block;
@@ -220,14 +224,12 @@ header nav ul li ul li a:hover {
 }
 footer {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   color: white;
   background-color: #153162;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 footer section.logo a {
@@ -470,7 +472,7 @@ table td {
 }
 @media (max-width: 768px) {
   .product-list {
-    width: 80%;
+    width: 70%;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -478,6 +480,7 @@ table td {
   .product-list {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+    width: 40%;
   }
 }
 .product-list .product {
@@ -513,7 +516,7 @@ table td {
   padding: 20px;
   gap: 30px;
   margin: 0 auto;
-  height: 70vh;
+  height: auto;
 }
 .product-container .product-gallery {
   display: flex;
@@ -571,7 +574,7 @@ table td {
   .product-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
   }
   .product-container .product-gallery .product-img {
     width: 300px;
@@ -579,13 +582,19 @@ table td {
 }
 @media (max-width: 480px) {
   .product-container .product-gallery .product-img {
-    width: 250px;
+    width: 200px;
+  }
+  .product-container .product-details select {
+    width: 90%;
   }
   .product-container .product-details h1 {
     font-size: 1.5rem;
   }
   .product-container .product-details h2 {
     font-size: 1.25rem;
+  }
+  .product-container .product-details input {
+    width: 90%;
   }
 }
 .container {
@@ -596,6 +605,8 @@ table td {
   overflow: hidden;
   border-radius: 10px;
   display: flex;
+  flex: 1;
+  margin-bottom: 2rem;
 }
 .container .tabBtns {
   flex-basis: 15%;

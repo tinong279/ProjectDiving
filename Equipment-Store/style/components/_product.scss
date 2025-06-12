@@ -12,13 +12,14 @@
   }
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 70%;
     grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+    width: 40%;
   }
 
   .product {
@@ -58,7 +59,7 @@
   padding: 20px;
   gap: 30px;
   margin: 0 auto;
-  height: 70vh;
+  height: auto;
 
   .product-gallery {
     display: flex;
@@ -126,7 +127,7 @@
   .product-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     .product-gallery {
       .product-img {
         width: 300px;
@@ -138,15 +139,21 @@
   .product-container {
     .product-gallery {
       .product-img {
-        width: 250px;
+        width: 200px;
       }
     }
     .product-details {
+      select {
+        width: 90%;
+      }
       h1 {
         font-size: 1.5rem;
       }
       h2 {
         font-size: 1.25rem;
+      }
+      input {
+        width: 90%;
       }
     }
   }
