@@ -6,7 +6,7 @@
   overflow: hidden;
   border-radius: 10px;
   display: flex;
-
+  flex: 1;
   .tabBtns {
     flex-basis: 15%;
     padding: 10px;
@@ -59,7 +59,7 @@
   .container {
     padding-top: 80px;
     flex-direction: column;
-    height: 200vh;
+
     .tabBtns {
       flex-basis: 0;
       padding: 10px;
@@ -75,7 +75,7 @@
     .tabContents {
       .contents {
         img {
-          width: 80%;
+          width: 70%;
         }
       }
     }
@@ -84,7 +84,7 @@
 @media (max-width: 480px) {
   .container {
     padding-top: 62px;
-    height: 180vh;
+
     .tabBtns {
       flex-basis: 0;
       padding: 10px;
