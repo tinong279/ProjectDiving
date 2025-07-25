@@ -55,6 +55,32 @@
     }
   }
 }
+@media (max-width: 1024px) {
+  .container {
+    padding-top: 80px;
+    flex-direction: column;
+    // margin-bottom: 0;
+    .tabBtns {
+      flex-basis: 0;
+      padding: 10px;
+      display: flex;
+      .btn {
+        width: 30%;
+        margin-bottom: 0;
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+
+    .tabContents {
+      .contents {
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
   .container {
     padding-top: 80px;
@@ -83,7 +109,7 @@
 }
 @media (max-width: 480px) {
   .container {
-    padding-top: 62px;
+    // padding-top: 62px;
 
     .tabBtns {
       flex-basis: 0;

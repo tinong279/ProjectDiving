@@ -155,6 +155,7 @@ body {
     section.background-wrapper {
       position: relative;
       height: 100vh;
+      // width: 100%;
       overflow: hidden;
 
       .bg-layer {
@@ -399,7 +400,7 @@ body {
   body {
     &.scrolled header nav {
       background-color: rgba(0, 0, 0, 0.95);
-      height: 5rem;
+      height: 4rem;
       z-index: 10;
     }
     header {
@@ -410,7 +411,7 @@ body {
         margin-left: 10px;
 
         h1 {
-          font-size: 2rem;
+          font-size: 1.75rem;
           color: white;
         }
         img {
@@ -429,10 +430,11 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding: 0 1rem;
-        height: 5rem;
+        height: 4rem;
         .hamburger {
           display: block;
           top: 10px;
+          font-size: 2rem;
         }
 
         ul {
@@ -484,9 +486,9 @@ body {
     }
     main {
       section.background-wrapper {
-        height: 80vh;
+        height: 50vh;
         .bg-layer {
-          min-height: 80vh;
+          min-height: 50vh;
         }
         .content1 {
           h4 {
@@ -722,12 +724,12 @@ body {
         margin-left: 10px;
 
         h1 {
-          font-size: 1.5rem;
+          font-size: 1rem;
           color: white;
         }
         img {
-          width: 40px;
-          height: 40px;
+          width: 35px;
+          height: px;
           filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
         }
       }
@@ -736,11 +738,11 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding: 0 1rem;
-        height: 3rem;
+        height: 2.5rem;
         .hamburger {
           display: block;
           top: 5px;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
 
         ul {
@@ -763,7 +765,11 @@ body {
             width: 100%;
             padding: 10px;
             text-align: left;
-
+            height: 60px;
+            a {
+              font-size: 1rem;
+              // padding-bottom: 0;
+            }
             .dropdown-menu {
               position: static;
               background-color: transparent;
@@ -792,10 +798,10 @@ body {
     }
     main {
       section.background-wrapper {
-        height: 50vh;
+        height: 35vh;
 
         .bg-layer {
-          min-height: 50vh;
+          min-height: 35vh;
         }
         .content1 {
           h4 {
@@ -837,7 +843,7 @@ body {
           display: flex;
           gap: 10px;
           flex-shrink: 0;
-          border: 1px solid blue;
+          // border: 1px solid blue;
           div.container {
             div.content {
               width: 300px;
@@ -863,6 +869,12 @@ body {
               font-size: 1px;
             }
           }
+        }
+      }
+      section.empty-container {
+        h3 {
+          color: white;
+          font-size: 1.2rem;
         }
       }
       section.google-map {

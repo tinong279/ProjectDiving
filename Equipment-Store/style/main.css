@@ -480,7 +480,7 @@ table td {
   .product-list {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
-    width: 40%;
+    width: 60%;
   }
 }
 .product-list .product {
@@ -603,10 +603,8 @@ table td {
   height: 120vh;
   padding-top: 100px;
   overflow: hidden;
-  border-radius: 10px;
   display: flex;
   flex: 1;
-  margin-bottom: 2rem;
 }
 .container .tabBtns {
   flex-basis: 15%;
@@ -653,7 +651,7 @@ table td {
   .container {
     flex-direction: column;
     padding-top: 100px;
-    height: 110vh;
+    height: 120vh;
   }
   .container .tabBtns {
     display: flex;
@@ -679,7 +677,7 @@ table td {
 }
 @media (max-width: 480px) {
   .container {
-    padding-top: 30px;
+    padding-top: 0px;
   }
   .container .tabBtns .btn {
     padding: 6px;

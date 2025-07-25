@@ -4,10 +4,10 @@
   height: 120vh;
   padding-top: 100px;
   overflow: hidden;
-  border-radius: 10px;
+  // border-radius: 10px;
   display: flex;
   flex: 1;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   .tabBtns {
     // display: flex;
     flex-basis: 15%;
@@ -62,7 +62,7 @@
   .container {
     flex-direction: column;
     padding-top: 100px;
-    height: 110vh;
+    height: 120vh;
     .tabBtns {
       display: flex;
       .btn {
@@ -91,7 +91,7 @@
 
 @media (max-width: 480px) {
   .container {
-    padding-top: 30px;
+    padding-top: 0px;
     .tabBtns {
       .btn {
         padding: 6px;

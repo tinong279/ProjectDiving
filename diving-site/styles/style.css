@@ -347,7 +347,7 @@ body footer section.links a img {
 @media (max-width: 1024px) {
   body.scrolled header nav {
     background-color: rgba(0, 0, 0, 0.95);
-    height: 5rem;
+    height: 4rem;
     z-index: 10;
   }
   body header section.logo {
@@ -357,7 +357,7 @@ body footer section.links a img {
     margin-left: 10px;
   }
   body header section.logo h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: white;
   }
   body header section.logo img {
@@ -375,11 +375,12 @@ body footer section.links a img {
     flex-direction: column;
     align-items: flex-start;
     padding: 0 1rem;
-    height: 5rem;
+    height: 4rem;
   }
   body header nav .hamburger {
     display: block;
     top: 10px;
+    font-size: 2rem;
   }
   body header nav ul {
     flex-direction: column;
@@ -422,10 +423,10 @@ body footer section.links a img {
     height: 40px;
   }
   body main section.background-wrapper {
-    height: 80vh;
+    height: 50vh;
   }
   body main section.background-wrapper .bg-layer {
-    min-height: 80vh;
+    min-height: 50vh;
   }
   body main section.background-wrapper .content1 h4 {
     color: white;
@@ -624,12 +625,12 @@ body footer section.links a img {
     margin-left: 10px;
   }
   body header section.logo h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
   }
   body header section.logo img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: px;
     filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
   }
   body header nav {
@@ -637,12 +638,12 @@ body footer section.links a img {
     flex-direction: column;
     align-items: flex-start;
     padding: 0 1rem;
-    height: 3rem;
+    height: 2.5rem;
   }
   body header nav .hamburger {
     display: block;
     top: 5px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   body header nav ul {
     flex-direction: column;
@@ -663,6 +664,10 @@ body footer section.links a img {
     width: 100%;
     padding: 10px;
     text-align: left;
+    height: 60px;
+  }
+  body header nav ul li a {
+    font-size: 1rem;
   }
   body header nav ul li .dropdown-menu {
     position: static;
@@ -685,10 +690,10 @@ body footer section.links a img {
     height: 40px;
   }
   body main section.background-wrapper {
-    height: 50vh;
+    height: 35vh;
   }
   body main section.background-wrapper .bg-layer {
-    min-height: 50vh;
+    min-height: 35vh;
   }
   body main section.background-wrapper .content1 h4 {
     color: white;
@@ -726,7 +731,6 @@ body footer section.links a img {
     display: flex;
     gap: 10px;
     flex-shrink: 0;
-    border: 1px solid blue;
   }
   body main section.sainer div.carousel div.container div.content {
     width: 300px;
@@ -750,6 +754,10 @@ body footer section.links a img {
     width: 1px;
     height: 1px;
     font-size: 1px;
+  }
+  body main section.empty-container h3 {
+    color: white;
+    font-size: 1.2rem;
   }
   body main section.google-map h3 {
     font-size: 1.5rem;
